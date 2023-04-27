@@ -1,0 +1,664 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@keyframes TransitionIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body {
+  background-image: url("pictures/background.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-attachment: fixed;
+  background-position: center;
+  background-color: rgb(78, 77, 77);
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+header .HeaderContainer {
+  margin: 50px;
+}
+header .HeaderContainer nav {
+  text-align: center;
+}
+header .HeaderContainer nav ul {
+  display: inline-block;
+  text-align: left;
+  background-color: #ededed;
+  opacity: 85%;
+  padding: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 30px;
+}
+header .HeaderContainer nav ul li {
+  display: inline-block;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 20px;
+  height: -moz-max-content;
+  height: max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+header .HeaderContainer nav ul li a {
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-top: 10px;
+  color: #233142;
+  text-decoration: none;
+}
+
+a:is(:link, :active, :visited).active {
+  color: #ededed;
+  background-color: #233142;
+  opacity: 90%;
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 20px;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 20px;
+}
+
+a:link {
+  color: #ededed;
+}
+
+a:hover {
+  color: #f95959 !important;
+  transition: all 0.3s !important;
+}
+
+main {
+  animation: TransitionIn 1s;
+}
+main .MainContainer {
+  margin-top: 120px;
+}
+main .MainContainer .ProfilePhoto .Image {
+  background-color: #ededed;
+  width: -moz-max-content;
+  width: max-content;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 210px;
+}
+main .MainContainer .ProfilePhoto .Image img {
+  display: block;
+  width: 300px;
+  height: 300px;
+  border-radius: 210px;
+  padding: 7px;
+}
+main .MainContainer .FirstText {
+  margin-top: 50px;
+}
+main .MainContainer .FirstText .text {
+  text-align: center;
+}
+main .MainContainer .FirstText .text h1 {
+  display: inline-block;
+  color: #ededed;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 500;
+  font-size: 60px;
+}
+main .MainContainer .SecondText {
+  margin-top: 30px;
+}
+main .MainContainer .SecondText .text {
+  text-align: center;
+}
+main .MainContainer .SecondText .text h2 {
+  display: inline-block;
+  color: #ededed;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 30px;
+}
+main .MainContainer .Cols {
+  position: relative;
+}
+main .MainContainer .Cols .ColTitle {
+  position: relative;
+}
+main .MainContainer .Cols .ColTitle h1 {
+  color: #ededed;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 500;
+  font-size: 100px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translateX(-50%) translateY(70%);
+}
+main .MainContainer .Cols .ColRight {
+  width: 50%;
+  float: right;
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  transform: translateX(50%) translateY(-10%);
+}
+main .MainContainer .Cols .ColRight .ColText {
+  width: 80%;
+  margin: auto;
+  background-color: rgba(35, 49, 66, 0.8);
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+}
+main .MainContainer .Cols .ColRight .ColText p {
+  text-align: left;
+  font-family: "Merriweather Sans", sans-serif;
+  color: #ededed;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 2;
+}
+main .MainContainer .Cols .ColRight .ColText .Container .CodeName {
+  width: 20%;
+  float: left;
+}
+main .MainContainer .Cols .ColRight .ColText .Container .CodeBar {
+  width: 70%;
+  margin-left: 10%;
+}
+main .MainContainer .Cols .ColRight .ColText .Container .CodeBar p {
+  display: block;
+}
+main .MainContainer .Cols .ColRight .ColText .Container .CodeBar p span {
+  background-color: #455d7a;
+  border-radius: 20px;
+}
+main .MainContainer .Cols .ColRight .ColText .Container .CodeBar p span img {
+  width: 13px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+main .MainContainer .Cols .ColRight2 {
+  width: 50%;
+  float: right;
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  transform: translateX(50%) translateY(60%);
+}
+main .MainContainer .Cols .ColRight2 .ColText {
+  text-align: center;
+}
+main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
+  width: 15%;
+  background-color: rgba(35, 49, 66, 0.7);
+  margin: 2%;
+  padding: 2%;
+  border-radius: 20px;
+  opacity: 90%;
+  transition: all 0.4s;
+}
+main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
+  background-color: rgba(69, 93, 122, 0.6);
+}
+
+@media screen and (min-width: 2000px) {
+  nav li {
+    font-size: 25px !important;
+  }
+  nav .active {
+    font-size: 25px !important;
+  }
+  .MainContainer {
+    margin-top: 220px !important;
+  }
+  .ProfilePhoto img {
+    width: 400px !important;
+    height: 400px !important;
+  }
+  .FirstText h1 {
+    font-size: 75px !important;
+  }
+  .SecondText h2 {
+    font-size: 40px !important;
+  }
+  .ColTitle h1 {
+    font-size: 120px !important;
+    transform: translateX(-50%) translateY(100%) !important;
+  }
+  .ColText p {
+    font-size: 25px !important;
+  }
+  .ColRight2 {
+    transform: translateX(50%) translateY(80%) !important;
+  }
+  .CodeBar img {
+    width: 18px !important;
+  }
+}
+@media screen and (max-width: 1450px) and (min-width: 1024px) {
+  p {
+    font-size: 15px !important;
+  }
+  .ColTitle h1 {
+    font-size: 80px !important;
+    transform: translateX(-50%) translateY(60%) !important;
+  }
+  .CodeBar img {
+    width: 11px !important;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .MainContainer {
+    margin-top: 80px !important;
+  }
+  .ProfilePhoto img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .FirstText h1 {
+    font-size: 50px !important;
+  }
+  .SecondText h2 {
+    font-size: 25px !important;
+  }
+  p {
+    font-size: 13px !important;
+  }
+  .ColTitle h1 {
+    font-size: 60px !important;
+    transform: translateX(-50%) translateY(60%) !important;
+  }
+  .CodeBar {
+    margin-left: 25% !important;
+  }
+  .CodeBar img {
+    width: 9px !important;
+  }
+}
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  nav ul {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+  nav li {
+    font-size: 15px !important;
+  }
+  nav .active {
+    font-size: 15px !important;
+  }
+  .MainContainer {
+    margin-top: 100px !important;
+  }
+  .ProfilePhoto img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .FirstText h1 {
+    font-size: 50px !important;
+  }
+  .SecondText h2 {
+    font-size: 25px !important;
+  }
+  .ColTitle {
+    position: relative;
+  }
+  .ColTitle h1 {
+    color: #ededed;
+    font-family: "Merriweather Sans", sans-serif;
+    font-weight: 500;
+    font-size: 60px !important;
+    text-align: center;
+    position: relative !important;
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-20%) !important;
+  }
+  .ColRight {
+    position: relative !important;
+    display: inline;
+    width: 100% !important;
+    float: none !important;
+    top: auto !important;
+    right: auto !important;
+    transform: translateX(auto) translateY(auto) !important;
+  }
+  .ColText {
+    position: relative !important;
+    width: 80% !important;
+    float: none !important;
+    top: auto;
+    right: auto;
+    transform: translateX(auto) translateY(auto);
+  }
+  .ColText p {
+    font-size: 18px !important;
+  }
+  .CodeBar {
+    margin-left: 120px !important;
+  }
+  .CodeBar img {
+    width: 13px !important;
+  }
+  .ColText {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .ColRight2 {
+    width: 50%;
+    float: right;
+    position: relative !important;
+    top: 50%;
+    right: 50% !important;
+    transform: translateX(50%) translateY(50%) !important;
+  }
+  .SocialContainer img {
+    border-radius: 10px !important;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  nav ul {
+    padding: 4px !important;
+    padding-top: 7px !important;
+    padding-bottom: 8px !important;
+  }
+  nav li {
+    font-size: 10px !important;
+  }
+  nav .active {
+    font-size: 10px !important;
+  }
+  .MainContainer {
+    margin-top: 50px !important;
+  }
+  .ProfilePhoto img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  .FirstText h1 {
+    font-size: 40px !important;
+  }
+  .SecondText h2 {
+    font-size: 20px !important;
+  }
+  .ColTitle {
+    position: relative;
+  }
+  .ColTitle h1 {
+    color: #ededed;
+    font-family: "Merriweather Sans", sans-serif;
+    font-weight: 500;
+    font-size: 40px !important;
+    text-align: center;
+    position: relative !important;
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-20%) !important;
+  }
+  .ColRight {
+    position: relative !important;
+    display: inline;
+    width: 100% !important;
+    float: none !important;
+    top: auto !important;
+    right: auto !important;
+    transform: translateX(auto) translateY(auto) !important;
+  }
+  .ColText {
+    position: relative !important;
+    width: 80% !important;
+    float: none !important;
+    top: auto;
+    right: auto;
+    transform: translateX(auto) translateY(auto);
+  }
+  .ColText p {
+    font-size: 18px !important;
+  }
+  .CodeBar {
+    margin-left: 110px !important;
+  }
+  .CodeBar img {
+    width: 13px !important;
+  }
+  .ColText {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 20px !important;
+  }
+  .ColRight2 {
+    width: 50%;
+    float: right;
+    position: relative !important;
+    top: 50%;
+    right: 50% !important;
+    transform: translateX(50%) translateY(50%) !important;
+  }
+  .SocialContainer img {
+    width: 20% !important;
+    margin: 3% !important;
+    padding: 2% !important;
+    border-radius: 10px !important;
+    margin-top: -10px !important;
+  }
+}
+@media screen and (max-width: 320px) {
+  nav ul {
+    padding: 5px !important;
+    padding-top: 7px !important;
+    padding-bottom: 8px !important;
+  }
+  nav li {
+    font-size: 10px !important;
+  }
+  nav .active {
+    font-size: 10px !important;
+  }
+  .MainContainer {
+    margin-top: 50px !important;
+  }
+  .ProfilePhoto img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  .FirstText h1 {
+    font-size: 40px !important;
+  }
+  .SecondText h2 {
+    font-size: 20px !important;
+  }
+  .ColTitle {
+    position: relative;
+  }
+  .ColTitle h1 {
+    color: #ededed;
+    font-family: "Merriweather Sans", sans-serif;
+    font-weight: 500;
+    font-size: 40px !important;
+    text-align: center;
+    position: relative !important;
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-20%) !important;
+  }
+  .ColRight {
+    position: relative !important;
+    display: inline;
+    width: 100% !important;
+    float: none !important;
+    top: auto !important;
+    right: auto !important;
+    transform: translateX(auto) translateY(auto) !important;
+  }
+  .ColText {
+    position: relative !important;
+    width: 80% !important;
+    float: none !important;
+    top: auto;
+    right: auto;
+    transform: translateX(auto) translateY(auto);
+  }
+  .ColText p {
+    font-size: 18px !important;
+  }
+  .CodeBar img {
+    width: 13px !important;
+  }
+  .ColText {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 20px !important;
+  }
+  .ColRight2 {
+    width: 50%;
+    float: right;
+    position: relative !important;
+    top: 50%;
+    right: 50% !important;
+    transform: translateX(50%) translateY(50%) !important;
+  }
+  .SocialContainer img {
+    width: 20% !important;
+    margin: 3% !important;
+    padding: 2% !important;
+    border-radius: 10px !important;
+    margin-top: -10px !important;
+  }
+}/*# sourceMappingURL=style.css.map */
