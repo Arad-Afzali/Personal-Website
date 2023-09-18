@@ -39,12 +39,12 @@ header {
       ul {
         display: inline-block;
         text-align: left;
-        background-color: $colorlight;
+        // background-color: $colorlight;
         opacity: 85%;
 
-        padding: 10px;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding: 20px;
+        // padding-top: 15px;
+        // padding-bottom: 15px;
         border-radius: 30px;
         li {
           display: inline-block;
@@ -60,6 +60,10 @@ header {
             margin-top: 10px;
             color: $colordark;
             text-decoration: none;
+            background-color: $colorlight;
+            border-radius: 20px;
+            border: $colorlight 4px solid;
+            margin: 5px;
           }
         }
       }
@@ -73,10 +77,11 @@ a:is(:link, :active, :visited).active {
   color: $colorlight;
   background-color: $colordark;
   opacity: 90%;
-  padding: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
+  // padding: 5px;
+  // padding-right: 10px;
+  // padding-left: 10px;
   border-radius: 20px;
+  border: $colorlight 4px solid;
   font-family: $font1;
   font-size: 20px;
 }
@@ -311,7 +316,7 @@ main {
   }
 }
 
-@media screen and (max-width:1024px) and (min-width: 768px) {
+@media screen and (max-width: 1024px) and (min-width: 768px) {
   .MainContainer {
     margin-top: 80px !important;
   }

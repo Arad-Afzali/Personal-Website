@@ -161,11 +161,8 @@ header .HeaderContainer nav {
 header .HeaderContainer nav ul {
   display: inline-block;
   text-align: left;
-  background-color: #ededed;
   opacity: 85%;
-  padding: 10px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 20px;
   border-radius: 30px;
 }
 header .HeaderContainer nav ul li {
@@ -184,16 +181,18 @@ header .HeaderContainer nav ul li a {
   margin-top: 10px;
   color: #233142;
   text-decoration: none;
+  background-color: #ededed;
+  border-radius: 20px;
+  border: #ededed 4px solid;
+  margin: 5px;
 }
 
 a:is(:link, :active, :visited).active {
   color: #ededed;
   background-color: #233142;
   opacity: 90%;
-  padding: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
   border-radius: 20px;
+  border: #ededed 4px solid;
   font-family: "Merriweather Sans", sans-serif;
   font-size: 20px;
 }
