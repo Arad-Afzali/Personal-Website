@@ -162,8 +162,8 @@ header .HeaderContainer nav ul {
   display: inline-block;
   text-align: left;
   opacity: 80%;
-  padding: 20px;
-  border-radius: 30px;
+  border-bottom: #ededed 2px solid;
+  padding-bottom: 20px;
 }
 header .HeaderContainer nav ul li {
   display: inline-block;
