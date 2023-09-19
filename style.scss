@@ -67,7 +67,6 @@ header {
 }
 
 a:is(:link, :active, :visited).active {
-
   color: $colorlight;
   background-color: $colordark;
   opacity: 90%;
@@ -200,6 +199,32 @@ main {
                     width: 13px;
                     padding-left: 5px;
                     padding-right: 5px;
+                  }
+                }
+              }
+            }
+
+            .bars {
+              .element {
+                #progressbar {
+                  background-color: $colorlight;
+                  border-radius: 13px;
+                  /* (height of inner div) / 2 + padding */
+                  padding: 3px;
+                  div {
+                    display: flex;
+                    background-color: $colorred;
+                    width: 40%;
+                    /* Adjust with JavaScript */
+                    height: 20px;
+                    border-radius: 10px;
+                    justify-content: right;
+                    align-items: center;
+                    span {
+                      font-family: $font1;
+                      padding-right: 20px;
+                      color: $colorlight;
+                    }
                   }
                 }
               }

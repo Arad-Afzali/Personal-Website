@@ -314,6 +314,27 @@ main .MainContainer .Cols .ColRight .ColText .Container .CodeBar p span img {
   padding-left: 5px;
   padding-right: 5px;
 }
+main .MainContainer .Cols .ColRight .ColText .Container .bars .element #progressbar {
+  background-color: #ededed;
+  border-radius: 13px;
+  /* (height of inner div) / 2 + padding */
+  padding: 3px;
+}
+main .MainContainer .Cols .ColRight .ColText .Container .bars .element #progressbar div {
+  display: flex;
+  background-color: #f95959;
+  width: 40%;
+  /* Adjust with JavaScript */
+  height: 20px;
+  border-radius: 10px;
+  justify-content: right;
+  align-items: center;
+}
+main .MainContainer .Cols .ColRight .ColText .Container .bars .element #progressbar div span {
+  font-family: "Merriweather Sans", sans-serif;
+  padding-right: 20px;
+  color: #ededed;
+}
 main .MainContainer .Cols .ColRight2 {
   width: 50%;
   float: right;
