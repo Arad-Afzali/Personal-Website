@@ -157,6 +157,10 @@ main {
           left: 25%;
           transform: translateX(-50%) translateY(70%);
         }
+        #myskills{
+          line-height: 1.2;
+          margin-top: -40px;
+        }
       }
       .ColRight {
         width: 50%;
@@ -183,27 +187,6 @@ main {
           }
 
           .Container {
-            .CodeName {
-              width: 20%;
-              float: left;
-            }
-            .CodeBar {
-              width: 70%;
-              margin-left: 10%;
-              p {
-                display: block;
-                span {
-                  background-color: $colormid;
-                  border-radius: 20px;
-                  img {
-                    width: 13px;
-                    padding-left: 5px;
-                    padding-right: 5px;
-                  }
-                }
-              }
-            }
-
             .bars {
               .element {
                 #progressbar {
@@ -216,12 +199,13 @@ main {
                     background-color: $colorred;
                     width: 40%;
                     /* Adjust with JavaScript */
-                    height: 20px;
+                    height: 15px;
                     border-radius: 10px;
                     justify-content: right;
                     align-items: center;
                     span {
                       font-family: $font1;
+                      font-size: 12px;
                       padding-right: 20px;
                       color: $colorlight;
                     }
@@ -334,6 +318,7 @@ main {
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px) {
+
   .MainContainer {
     margin-top: 80px !important;
   }
@@ -372,17 +357,28 @@ main {
 }
 
 @media screen and (min-width: 425px) and (max-width: 768px) {
+  .HeaderContainer{
+    margin: 30px !important;
+  }
   nav {
     ul {
-      // padding: 5px !important;
-      padding-top: 12px !important;
-      padding-bottom: 12px !important;
+      padding-bottom: 15px !important;
     }
     li {
-      font-size: 15px !important;
+      font-size: 12px !important;
+      margin: 0px;
+      a{
+        padding: 3px !important;
+        border: 2px solid $colorlight !important;
+      }
+
     }
     .active {
-      font-size: 15px !important;
+      font-size: 12px !important;
+      a{
+        padding: 4px !important;
+        border: 2px solid $colorlight !important;
+      }
     }
   }
   .MainContainer {
@@ -442,13 +438,15 @@ main {
     transform: translateX(auto) translateY(auto);
 
     p {
-      font-size: 18px !important;
+      font-size: 16px !important;
     }
   }
-  .CodeBar {
-    margin-left: 120px !important;
-    img {
-      width: 13px !important;
+  .bars{
+    .element{
+      p{
+        font-size: 12px !important ;
+      }
+
     }
   }
 
@@ -467,13 +465,26 @@ main {
   }
 
   .SocialContainer {
+    margin-top: -100px !important;
+
     img {
       border-radius: 10px !important;
+      width: 35% !important;
+      margin: 10px !important;
     }
+  }
+  #resume{
+    margin-top: 0px !important;
+
   }
 }
 
+
+
 @media screen and (min-width: 320px) and (max-width: 425px) {
+  .HeaderContainer{
+    margin: 20px !important;
+  }
   nav {
     ul {
       padding: 4px !important;
@@ -482,6 +493,11 @@ main {
     }
     li {
       font-size: 10px !important;
+      margin: -3px;
+      a{
+        padding: 2px !important;
+        border: solid 2px $colorlight !important;
+      }
     }
     .active {
       font-size: 10px !important;
@@ -489,6 +505,9 @@ main {
   }
   .MainContainer {
     margin-top: 50px !important;
+    #myskills{
+      margin-top: 30px !important;
+    }
   }
   .ProfilePhoto {
     img {
@@ -544,16 +563,18 @@ main {
     transform: translateX(auto) translateY(auto);
 
     p {
-      font-size: 18px !important;
+      font-size: 14px !important;
     }
   }
-  .CodeBar {
-    margin-left: 110px !important;
+  .bars{
+    .element{
+      p{
+        font-size: 14px !important ;
+      }
 
-    img {
-      width: 13px !important;
     }
   }
+
 
   .ColText {
     margin-left: auto !important;
@@ -570,16 +591,32 @@ main {
     transform: translateX(50%) translateY(50%) !important;
   }
 
+  // .SocialContainer {
+  //   img {
+  //     width: 20% !important;
+  //     margin: 3% !important;
+  //     padding: 2% !important;
+  //     border-radius: 10px !important;
+  //     margin-top: -10px !important;
+  //   }
+  // }
   .SocialContainer {
+    margin-top: -100px !important;
+  
     img {
-      width: 20% !important;
-      margin: 3% !important;
-      padding: 2% !important;
       border-radius: 10px !important;
-      margin-top: -10px !important;
+      width: 35% !important;
+      margin: 10px !important;
     }
   }
+
+  #resume{
+    margin-top: 0px !important;
+
+  }
 }
+
+
 
 @media screen and (max-width: 320px) {
   nav {

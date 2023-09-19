@@ -270,6 +270,10 @@ main .MainContainer .Cols .ColTitle h1 {
   left: 25%;
   transform: translateX(-50%) translateY(70%);
 }
+main .MainContainer .Cols .ColTitle #myskills {
+  line-height: 1.2;
+  margin-top: -40px;
+}
 main .MainContainer .Cols .ColRight {
   width: 50%;
   float: right;
@@ -294,26 +298,6 @@ main .MainContainer .Cols .ColRight .ColText p {
   font-weight: 400;
   line-height: 2;
 }
-main .MainContainer .Cols .ColRight .ColText .Container .CodeName {
-  width: 20%;
-  float: left;
-}
-main .MainContainer .Cols .ColRight .ColText .Container .CodeBar {
-  width: 70%;
-  margin-left: 10%;
-}
-main .MainContainer .Cols .ColRight .ColText .Container .CodeBar p {
-  display: block;
-}
-main .MainContainer .Cols .ColRight .ColText .Container .CodeBar p span {
-  background-color: #455d7a;
-  border-radius: 20px;
-}
-main .MainContainer .Cols .ColRight .ColText .Container .CodeBar p span img {
-  width: 13px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
 main .MainContainer .Cols .ColRight .ColText .Container .bars .element #progressbar {
   background-color: #ededed;
   border-radius: 13px;
@@ -325,13 +309,14 @@ main .MainContainer .Cols .ColRight .ColText .Container .bars .element #progress
   background-color: #f95959;
   width: 40%;
   /* Adjust with JavaScript */
-  height: 20px;
+  height: 15px;
   border-radius: 10px;
   justify-content: right;
   align-items: center;
 }
 main .MainContainer .Cols .ColRight .ColText .Container .bars .element #progressbar div span {
   font-family: "Merriweather Sans", sans-serif;
+  font-size: 12px;
   padding-right: 20px;
   color: #ededed;
 }
@@ -439,15 +424,26 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
   }
 }
 @media screen and (min-width: 425px) and (max-width: 768px) {
+  .HeaderContainer {
+    margin: 30px !important;
+  }
   nav ul {
-    padding-top: 12px !important;
-    padding-bottom: 12px !important;
+    padding-bottom: 15px !important;
   }
   nav li {
-    font-size: 15px !important;
+    font-size: 12px !important;
+    margin: 0px;
+  }
+  nav li a {
+    padding: 3px !important;
+    border: 2px solid #ededed !important;
   }
   nav .active {
-    font-size: 15px !important;
+    font-size: 12px !important;
+  }
+  nav .active a {
+    padding: 4px !important;
+    border: 2px solid #ededed !important;
   }
   .MainContainer {
     margin-top: 100px !important;
@@ -494,13 +490,10 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
     transform: translateX(auto) translateY(auto);
   }
   .ColText p {
-    font-size: 18px !important;
+    font-size: 16px !important;
   }
-  .CodeBar {
-    margin-left: 120px !important;
-  }
-  .CodeBar img {
-    width: 13px !important;
+  .bars .element p {
+    font-size: 12px !important;
   }
   .ColText {
     margin-left: auto !important;
@@ -514,11 +507,22 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
     right: 50% !important;
     transform: translateX(50%) translateY(50%) !important;
   }
+  .SocialContainer {
+    margin-top: -100px !important;
+  }
   .SocialContainer img {
     border-radius: 10px !important;
+    width: 35% !important;
+    margin: 10px !important;
+  }
+  #resume {
+    margin-top: 0px !important;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 425px) {
+  .HeaderContainer {
+    margin: 20px !important;
+  }
   nav ul {
     padding: 4px !important;
     padding-top: 7px !important;
@@ -526,12 +530,20 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
   }
   nav li {
     font-size: 10px !important;
+    margin: -3px;
+  }
+  nav li a {
+    padding: 2px !important;
+    border: solid 2px #ededed !important;
   }
   nav .active {
     font-size: 10px !important;
   }
   .MainContainer {
     margin-top: 50px !important;
+  }
+  .MainContainer #myskills {
+    margin-top: 30px !important;
   }
   .ProfilePhoto img {
     width: 150px !important;
@@ -575,13 +587,10 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
     transform: translateX(auto) translateY(auto);
   }
   .ColText p {
-    font-size: 18px !important;
+    font-size: 14px !important;
   }
-  .CodeBar {
-    margin-left: 110px !important;
-  }
-  .CodeBar img {
-    width: 13px !important;
+  .bars .element p {
+    font-size: 14px !important;
   }
   .ColText {
     margin-left: auto !important;
@@ -596,12 +605,16 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
     right: 50% !important;
     transform: translateX(50%) translateY(50%) !important;
   }
+  .SocialContainer {
+    margin-top: -100px !important;
+  }
   .SocialContainer img {
-    width: 20% !important;
-    margin: 3% !important;
-    padding: 2% !important;
     border-radius: 10px !important;
-    margin-top: -10px !important;
+    width: 35% !important;
+    margin: 10px !important;
+  }
+  #resume {
+    margin-top: 0px !important;
   }
 }
 @media screen and (max-width: 320px) {
