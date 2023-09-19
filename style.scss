@@ -243,11 +243,12 @@ main {
           text-align: center;
 
           .SocialContainer {
+            margin-top: 50px;
             a {
+              margin: 10px;
               img {
-                width: 15%;
+                width: 10%;
                 background-color: rgb(35, 49, 66, 0.7);
-                margin: 2%;
                 padding: 2%;
                 border-radius: 20px;
                 opacity: 90%;

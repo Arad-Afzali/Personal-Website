@@ -346,10 +346,15 @@ main .MainContainer .Cols .ColRight2 {
 main .MainContainer .Cols .ColRight2 .ColText {
   text-align: center;
 }
+main .MainContainer .Cols .ColRight2 .ColText .SocialContainer {
+  margin-top: 50px;
+}
+main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a {
+  margin: 10px;
+}
 main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
-  width: 15%;
+  width: 10%;
   background-color: rgba(35, 49, 66, 0.7);
-  margin: 2%;
   padding: 2%;
   border-radius: 20px;
   opacity: 90%;
