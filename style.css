@@ -291,7 +291,8 @@ main .MainContainer .Cols .ColRight .ColText {
   position: relative;
 }
 main .MainContainer .Cols .ColRight .ColText p {
-  text-align: left;
+  text-align: justify;
+  margin-bottom: 15px;
   font-family: "Merriweather Sans", sans-serif;
   color: #ededed;
   font-size: 18px;
