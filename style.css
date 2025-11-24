@@ -139,6 +139,14 @@ table {
     transform: translateY(0);
   }
 }
+@keyframes GlassFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 body {
   background-image: url("pictures/background.jpg");
   background-repeat: no-repeat;
@@ -159,14 +167,21 @@ header .HeaderContainer nav {
   text-align: center;
 }
 header .HeaderContainer nav ul {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
   text-align: left;
-  opacity: 80%;
-  border-bottom: #ededed 2px solid;
-  padding-bottom: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  padding: 5px;
 }
 header .HeaderContainer nav ul li {
-  display: inline-block;
+  display: block;
   font-family: "Merriweather Sans", sans-serif;
   font-size: 20px;
   height: -moz-max-content;
@@ -175,26 +190,33 @@ header .HeaderContainer nav ul li {
   width: max-content;
 }
 header .HeaderContainer nav ul li a {
-  padding: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
-  margin-top: 10px;
-  color: #233142;
+  display: block;
+  padding: 10px 20px;
+  color: #ededed;
   text-decoration: none;
-  background-color: #ededed;
-  border-radius: 20px;
-  border: #ededed 4px solid;
-  margin: 5px;
+  background-color: transparent;
+  border-radius: 25px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+header .HeaderContainer nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
 }
 
 a:is(:link, :active, :visited).active {
-  color: #ededed;
-  background-color: #233142;
-  opacity: 90%;
-  border-radius: 20px;
-  border: #ededed 4px solid;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   font-family: "Merriweather Sans", sans-serif;
   font-size: 20px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 a:link {
@@ -213,13 +235,26 @@ main .MainContainer {
   margin-top: 120px;
 }
 main .MainContainer .ProfilePhoto .Image {
-  background-color: #ededed;
   width: -moz-max-content;
   width: max-content;
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-radius: 210px;
+  position: relative;
+}
+main .MainContainer .ProfilePhoto .Image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border-radius: 210px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  animation: GlassFadeIn 1s ease-out 1s backwards;
 }
 main .MainContainer .ProfilePhoto .Image img {
   display: block;
@@ -240,6 +275,21 @@ main .MainContainer .FirstText .text h1 {
   font-family: "Merriweather Sans", sans-serif;
   font-weight: 500;
   font-size: 60px;
+  position: relative;
+  padding: 10px 15px;
+}
+main .MainContainer .FirstText .text h1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  animation: GlassFadeIn 1s ease-out 1s backwards;
 }
 main .MainContainer .SecondText {
   margin-top: 30px;
@@ -252,6 +302,21 @@ main .MainContainer .SecondText .text h2 {
   color: #ededed;
   font-family: "Merriweather Sans", sans-serif;
   font-size: 30px;
+  position: relative;
+  padding: 10px 15px;
+}
+main .MainContainer .SecondText .text h2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  animation: GlassFadeIn 1s ease-out 1s backwards;
 }
 main .MainContainer .Cols {
   position: relative;
@@ -285,10 +350,21 @@ main .MainContainer .Cols .ColRight {
 main .MainContainer .Cols .ColRight .ColText {
   width: 80%;
   margin: auto;
-  background-color: rgba(35, 49, 66, 0.8);
-  border-radius: 20px;
   padding: 20px;
   position: relative;
+}
+main .MainContainer .Cols .ColRight .ColText::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  animation: GlassFadeIn 1s ease-out 1s backwards;
 }
 main .MainContainer .Cols .ColRight .ColText p {
   text-align: justify;
@@ -337,17 +413,39 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer {
 }
 main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a {
   margin: 10px;
-}
-main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
+  display: inline-block;
+  position: relative;
   width: 10%;
-  background-color: rgba(35, 49, 66, 0.7);
   padding: 2%;
   border-radius: 20px;
-  opacity: 90%;
-  transition: all 0.4s;
+  transition: transform 0.3s ease;
 }
-main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
-  background-color: rgba(69, 93, 122, 0.6);
+main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  animation: GlassFadeIn 1s ease-out 1s backwards;
+  transition: all 0.3s ease;
+}
+main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a:hover {
+  transform: scale(1.05);
+}
+main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a:hover::before {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  transition: all 0.4s;
 }
 
 @media screen and (min-width: 2000px) {
@@ -429,22 +527,23 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
     margin: 30px !important;
   }
   nav ul {
-    padding-bottom: 15px !important;
+    padding: 5px !important;
+    gap: 3px;
   }
   nav li {
     font-size: 12px !important;
     margin: 0px;
   }
   nav li a {
-    padding: 3px !important;
-    border: 2px solid #ededed !important;
+    padding: 8px 12px !important;
+    border: 1px solid transparent !important;
   }
   nav .active {
     font-size: 12px !important;
   }
   nav .active a {
-    padding: 4px !important;
-    border: 2px solid #ededed !important;
+    padding: 8px 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
   }
   .MainContainer {
     margin-top: 100px !important;
@@ -455,9 +554,14 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
   }
   .FirstText h1 {
     font-size: 50px !important;
+    max-width: 90%;
+    box-sizing: border-box;
   }
   .SecondText h2 {
     font-size: 25px !important;
+    line-height: 1.6 !important;
+    max-width: 90%;
+    box-sizing: border-box;
   }
   .ColTitle {
     position: relative;
@@ -510,11 +614,22 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
   }
   .SocialContainer {
     margin-top: -100px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .SocialContainer a {
+    width: 15% !important;
+    margin: 10px !important;
+    border-radius: 10px !important;
+  }
+  .SocialContainer a::before {
+    border-radius: 10px !important;
   }
   .SocialContainer img {
     border-radius: 10px !important;
-    width: 35% !important;
-    margin: 10px !important;
+    width: 100% !important;
+    margin: 0 !important;
   }
   #resume {
     margin-top: 0px !important;
@@ -526,19 +641,21 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
   }
   nav ul {
     padding: 4px !important;
-    padding-top: 7px !important;
-    padding-bottom: 8px !important;
+    gap: 2px;
   }
   nav li {
     font-size: 10px !important;
-    margin: -3px;
+    margin: 0;
   }
   nav li a {
-    padding: 2px !important;
-    border: solid 2px #ededed !important;
+    padding: 6px 10px !important;
+    border: 1px solid transparent !important;
   }
   nav .active {
     font-size: 10px !important;
+  }
+  nav .active a {
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
   }
   .MainContainer {
     margin-top: 50px !important;
@@ -552,9 +669,14 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
   }
   .FirstText h1 {
     font-size: 40px !important;
+    max-width: 90%;
+    box-sizing: border-box;
   }
   .SecondText h2 {
     font-size: 20px !important;
+    line-height: 1.6 !important;
+    max-width: 90%;
+    box-sizing: border-box;
   }
   .ColTitle {
     position: relative;
@@ -608,11 +730,22 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
   }
   .SocialContainer {
     margin-top: -100px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .SocialContainer a {
+    width: 20% !important;
+    margin: 10px !important;
+    border-radius: 10px !important;
+  }
+  .SocialContainer a::before {
+    border-radius: 10px !important;
   }
   .SocialContainer img {
     border-radius: 10px !important;
-    width: 35% !important;
-    margin: 10px !important;
+    width: 100% !important;
+    margin: 0 !important;
   }
   #resume {
     margin-top: 0px !important;
@@ -620,15 +753,17 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
 }
 @media screen and (max-width: 320px) {
   nav ul {
-    padding: 5px !important;
-    padding-top: 7px !important;
-    padding-bottom: 8px !important;
+    padding: 3px !important;
+    gap: 1px;
   }
   nav li {
-    font-size: 10px !important;
+    font-size: 9px !important;
+  }
+  nav li a {
+    padding: 5px 8px !important;
   }
   nav .active {
-    font-size: 10px !important;
+    font-size: 9px !important;
   }
   .MainContainer {
     margin-top: 50px !important;
@@ -639,9 +774,14 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
   }
   .FirstText h1 {
     font-size: 40px !important;
+    max-width: 90%;
+    box-sizing: border-box;
   }
   .SecondText h2 {
     font-size: 20px !important;
+    line-height: 1.6 !important;
+    max-width: 90%;
+    box-sizing: border-box;
   }
   .ColTitle {
     position: relative;
@@ -693,11 +833,24 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img:hover {
     right: 50% !important;
     transform: translateX(50%) translateY(50%) !important;
   }
+  .SocialContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .SocialContainer a {
+    width: 25% !important;
+    margin: 5px !important;
+    border-radius: 10px !important;
+  }
+  .SocialContainer a::before {
+    border-radius: 10px !important;
+  }
   .SocialContainer img {
-    width: 20% !important;
-    margin: 3% !important;
+    width: 100% !important;
+    margin: 0 !important;
     padding: 2% !important;
     border-radius: 10px !important;
-    margin-top: -10px !important;
+    margin-top: 0 !important;
   }
 }/*# sourceMappingURL=style.css.map */

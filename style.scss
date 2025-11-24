@@ -16,6 +16,15 @@ $colorred: #f95959;
   }
 }
 
+@keyframes GlassFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 body {
   // min-width: 1200px;
   // min-height: 700px;
@@ -37,28 +46,44 @@ header {
     nav {
       text-align: center;
       ul {
-        display: inline-block;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
         text-align: left;
-        opacity: 80%;
-        border-bottom: $colorlight 2px solid;
-        padding-bottom: 20px;
+        
+        // Liquid Glass / Glassmorphism Style (iOS "26" inspired)
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(25px) saturate(200%);
+        -webkit-backdrop-filter: blur(25px) saturate(200%);
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        padding: 5px;
+
         li {
-          display: inline-block;
+          display: block;
           font-family: $font1;
           font-size: 20px;
           height: max-content;
           width: max-content;
+
           a {
-            padding: 5px;
-            padding-right: 10px;
-            padding-left: 10px;
-            margin-top: 10px;
-            color: $colordark;
+            display: block;
+            padding: 10px 20px;
+            color: $colorlight;
             text-decoration: none;
-            background-color: $colorlight;
-            border-radius: 20px;
-            border: $colorlight 4px solid;
-            margin: 5px;
+            background-color: transparent;
+            border-radius: 25px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.15);
+              border-color: rgba(255, 255, 255, 0.3);
+                transform: scale(1.05);
+            }
           }
         }
       }
@@ -67,13 +92,16 @@ header {
 }
 
 a:is(:link, :active, :visited).active {
-  color: $colorlight;
-  background-color: $colordark;
-  opacity: 90%;
-  border-radius: 20px;
-  border: $colorlight 4px solid;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   font-family: $font1;
   font-size: 20px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
 a:link {
   color: $colorlight;
@@ -94,12 +122,29 @@ main {
     margin-top: 120px;
     .ProfilePhoto {
       .Image {
-        background-color: $colorlight;
         width: max-content;
         display: block;
         margin-left: auto;
         margin-right: auto;
         border-radius: 210px;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          z-index: -1;
+          
+          // Liquid Glass
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(25px) saturate(200%);
+          -webkit-backdrop-filter: blur(25px) saturate(200%);
+          border-radius: 210px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+          
+          animation: GlassFadeIn 1s ease-out 1s backwards;
+        }
 
         img {
           display: block;
@@ -120,6 +165,25 @@ main {
           font-family: $font1;
           font-weight: 500;
           font-size: 60px;
+          position: relative;
+          padding: 10px 15px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            
+            // Liquid Glass
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px) saturate(200%);
+            -webkit-backdrop-filter: blur(25px) saturate(200%);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            
+            animation: GlassFadeIn 1s ease-out 1s backwards;
+          }
         }
       }
     }
@@ -134,6 +198,25 @@ main {
           color: $colorlight;
           font-family: $font1;
           font-size: 30px;
+          position: relative;
+          padding: 10px 15px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            
+            // Liquid Glass
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px) saturate(200%);
+            -webkit-backdrop-filter: blur(25px) saturate(200%);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            
+            animation: GlassFadeIn 1s ease-out 1s backwards;
+          }
         }
       }
     }
@@ -173,10 +256,28 @@ main {
         .ColText {
           width: 80%;
           margin: auto;
-          background-color: rgb(35, 49, 66, 0.8);
-          border-radius: 20px;
           padding: 20px;
           position: relative;
+          
+          // Glassmorphism background via pseudo-element to allow separate animation
+          &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            
+            // Liquid Glass / Glassmorphism Style
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px) saturate(200%);
+            -webkit-backdrop-filter: blur(25px) saturate(200%);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            
+            // Animate the glass effect fading in after the main content
+            animation: GlassFadeIn 1s ease-out 1s backwards;
+          }
+
           p {
             text-align: justify;
             margin-bottom: 15px;
@@ -231,16 +332,46 @@ main {
             margin-top: 50px;
             a {
               margin: 10px;
-              img {
-                width: 10%;
-                background-color: rgb(35, 49, 66, 0.7);
-                padding: 2%;
+              display: inline-block;
+              position: relative;
+              width: 10%;
+              padding: 2%;
+              border-radius: 20px;
+              transition: transform 0.3s ease;
+              
+              // Glassmorphism background
+              &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+                
+                // Liquid Glass
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(25px) saturate(200%);
+                -webkit-backdrop-filter: blur(25px) saturate(200%);
                 border-radius: 20px;
-                opacity: 90%;
-                transition: all 0.4s;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+                
+                animation: GlassFadeIn 1s ease-out 1s backwards;
+                transition: all 0.3s ease;
               }
-              img:hover {
-                background-color: rgb(69, 93, 122, 0.6);
+
+              &:hover {
+                transform: scale(1.05);
+              }
+
+              &:hover::before {
+                background-color: rgba(255, 255, 255, 0.15);
+                border-color: rgba(255, 255, 255, 0.3);
+              }
+
+              img {
+                width: 100%;
+                display: block;
+                border-radius: 20px;
+                transition: all 0.4s;
               }
             }
           }
@@ -363,22 +494,23 @@ main {
   }
   nav {
     ul {
-      padding-bottom: 15px !important;
+      padding: 5px !important;
+      gap: 3px;
     }
     li {
       font-size: 12px !important;
       margin: 0px;
       a{
-        padding: 3px !important;
-        border: 2px solid $colorlight !important;
+        padding: 8px 12px !important;
+        border: 1px solid transparent !important;
       }
 
     }
     .active {
       font-size: 12px !important;
       a{
-        padding: 4px !important;
-        border: 2px solid $colorlight !important;
+        padding: 8px 12px !important;
+        border: 1px solid rgba(255, 255, 255, 0.5) !important;
       }
     }
   }
@@ -394,11 +526,16 @@ main {
   .FirstText {
     h1 {
       font-size: 50px !important;
+      max-width: 90%;
+      box-sizing: border-box;
     }
   }
   .SecondText {
     h2 {
       font-size: 25px !important;
+      line-height: 1.6 !important;
+      max-width: 90%;
+      box-sizing: border-box;
     }
   }
 
@@ -467,11 +604,24 @@ main {
 
   .SocialContainer {
     margin-top: -100px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      width: 15% !important;
+      margin: 10px !important;
+      border-radius: 10px !important;
+
+      &::before {
+        border-radius: 10px !important;
+      }
+    }
 
     img {
       border-radius: 10px !important;
-      width: 35% !important;
-      margin: 10px !important;
+      width: 100% !important;
+      margin: 0 !important;
     }
   }
   #resume{
@@ -489,19 +639,21 @@ main {
   nav {
     ul {
       padding: 4px !important;
-      padding-top: 7px !important;
-      padding-bottom: 8px !important;
+      gap: 2px;
     }
     li {
       font-size: 10px !important;
-      margin: -3px;
+      margin: 0;
       a{
-        padding: 2px !important;
-        border: solid 2px $colorlight !important;
+        padding: 6px 10px !important;
+        border: 1px solid transparent !important;
       }
     }
     .active {
       font-size: 10px !important;
+      a {
+        border: 1px solid rgba(255, 255, 255, 0.5) !important;
+      }
     }
   }
   .MainContainer {
@@ -519,11 +671,16 @@ main {
   .FirstText {
     h1 {
       font-size: 40px !important;
+      max-width: 90%;
+      box-sizing: border-box;
     }
   }
   .SecondText {
     h2 {
       font-size: 20px !important;
+      line-height: 1.6 !important;
+      max-width: 90%;
+      box-sizing: border-box;
     }
   }
 
@@ -603,11 +760,24 @@ main {
   // }
   .SocialContainer {
     margin-top: -100px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      width: 20% !important;
+      margin: 10px !important;
+      border-radius: 10px !important;
+
+      &::before {
+        border-radius: 10px !important;
+      }
+    }
   
     img {
       border-radius: 10px !important;
-      width: 35% !important;
-      margin: 10px !important;
+      width: 100% !important;
+      margin: 0 !important;
     }
   }
 
@@ -622,15 +792,17 @@ main {
 @media screen and (max-width: 320px) {
   nav {
     ul {
-      padding: 5px !important;
-      padding-top: 7px !important;
-      padding-bottom: 8px !important;
+      padding: 3px !important;
+      gap: 1px;
     }
     li {
-      font-size: 10px !important;
+      font-size: 9px !important;
+      a {
+        padding: 5px 8px !important;
+      }
     }
     .active {
-      font-size: 10px !important;
+      font-size: 9px !important;
     }
   }
   .MainContainer {
@@ -645,11 +817,16 @@ main {
   .FirstText {
     h1 {
       font-size: 40px !important;
+      max-width: 90%;
+      box-sizing: border-box;
     }
   }
   .SecondText {
     h2 {
       font-size: 20px !important;
+      line-height: 1.6 !important;
+      max-width: 90%;
+      box-sizing: border-box;
     }
   }
 
@@ -715,12 +892,26 @@ main {
   }
 
   .SocialContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      width: 25% !important;
+      margin: 5px !important;
+      border-radius: 10px !important;
+
+      &::before {
+        border-radius: 10px !important;
+      }
+    }
+
     img {
-      width: 20% !important;
-      margin: 3% !important;
+      width: 100% !important;
+      margin: 0 !important;
       padding: 2% !important;
       border-radius: 10px !important;
-      margin-top: -10px !important;
+      margin-top: 0 !important;
     }
   }
 }
