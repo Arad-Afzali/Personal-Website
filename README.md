@@ -5,15 +5,12 @@ This is the code for my personal website that I have created using HTML,SCSS, CS
 
 Here are the screenshots of each page in desktop mode and in mobile view.
 
-![Web capture_19-9-2023_191940_aradafzali com](https://aradafzali.com/index.html)
+![Web capture_19-9-2023_191940_aradafzali com](screenshots/aradafzali.com_index.html.png)
 
-![Web capture_19-9-2023_191952_aradafzali com](https://aradafzali.com/aboutme.html)
+![Web capture_19-9-2023_191952_aradafzali com](screenshots/aradafzali.com_aboutme.html.png)
 
-![Web capture_19-9-2023_19203_aradafzali com](https://aradafzali.com/skills.html)
+![Web capture_19-9-2023_19203_aradafzali com](screenshots/aradafzali.com_skills.html.png)
 
-![Web capture_19-9-2023_192017_aradafzali com](https://aradafzali.com/contact.html)
+![Web capture_19-9-2023_192017_aradafzali com](screenshots/aradafzali.com_contact.html.png)
 
-![Web capture_19-9-2023_192032_aradafzali com](https://aradafzali.com/resume.html)
-
-![20230919_193735](https://github.com/Arad-Afzali/Personal-Website/assets/76968008/69cc91e2-a7b0-461d-8dfe-c42d071ff954)
 
