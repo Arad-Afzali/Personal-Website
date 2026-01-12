@@ -5,6 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style.css" />
+    <style>
+      @media screen and (min-width: 320px) and (max-width: 425px) {
+        nav li {
+          font-size: 9px !important;
+        }
+        nav li a {
+          padding: 6px 7px !important;
+        }
+        nav .active {
+          font-size: 9px !important;
+        }
+      }
+      @media screen and (max-width: 320px) {
+        nav li {
+          font-size: 8px !important;
+        }
+        nav li a {
+          padding: 5px 5px !important;
+        }
+      }
+    </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +42,6 @@
       <div class="toggle-container">
         <a href="../aboutme.html"><img src="../pictures/flag-uk.svg" alt="English"></a>
         <a href="aboutme.html" class="active"><img src="../pictures/flag-italy.svg" alt="Italian"></a>
-        <a href="../fa/aboutme.html"><img src="../pictures/flag-iran.svg" alt="Persian"></a>
       </div>
     </div>
     <header>
@@ -35,7 +55,7 @@
               <a class="active" href="aboutme.html"><span>Chi sono</span></a>
             </li>
             <li>
-              <a href="skills.html"><span>Le mie competenze</span></a>
+              <a href="skills.html"><span>Competenze</span></a>
             </li>
             <li>
               <a href="contact.html"><span>Contattami</span></a>
