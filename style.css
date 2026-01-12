@@ -1020,4 +1020,30 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
   font-family: "Vazirmatn", sans-serif !important;
 }
 
+/* Mobile Background Fix */
+@media screen and (max-width: 768px) {
+  body {
+    background-image: none !important;
+    background-color: transparent !important;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100lvh;
+    background-image: url("pictures/background2-mobile.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(78, 77, 77, 0.70);
+    background-blend-mode: multiply;
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
