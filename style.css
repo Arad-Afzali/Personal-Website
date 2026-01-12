@@ -335,6 +335,12 @@ main .MainContainer .Cols .ColTitle h1 {
   left: 25%;
   transform: translateX(-50%) translateY(70%);
 }
+
+[dir="rtl"] main .MainContainer .Cols .ColTitle h1 {
+  left: auto;
+  right: 25%;
+  transform: translateX(50%) translateY(70%);
+}
 main .MainContainer .Cols .ColTitle #myskills {
   line-height: 1.2;
   margin-top: -40px;
@@ -346,6 +352,13 @@ main .MainContainer .Cols .ColRight {
   top: 50%;
   right: 25%;
   transform: translateX(50%) translateY(-10%);
+}
+
+[dir="rtl"] main .MainContainer .Cols .ColRight {
+  right: auto;
+  left: 25%;
+  float: left;
+  transform: translateX(-50%) translateY(-10%);
 }
 main .MainContainer .Cols .ColRight .ColText {
   width: 80%;
@@ -391,11 +404,22 @@ main .MainContainer .Cols .ColRight .ColText .Container .bars .element #progress
   justify-content: right;
   align-items: center;
 }
+
+[dir="rtl"] main .MainContainer .Cols .ColRight .ColText .Container .bars .element #progressbar div {
+  justify-content: left;
+  direction: ltr;
+}
+
 main .MainContainer .Cols .ColRight .ColText .Container .bars .element #progressbar div span {
   font-family: "Merriweather Sans", sans-serif;
   font-size: 12px;
   padding-right: 20px;
   color: #ededed;
+}
+
+[dir="rtl"] main .MainContainer .Cols .ColRight .ColText .Container .bars .element #progressbar div span {
+  padding-right: 0;
+  padding-left: 20px;
 }
 main .MainContainer .Cols .ColRight2 {
   width: 50%;
@@ -404,6 +428,13 @@ main .MainContainer .Cols .ColRight2 {
   top: 50%;
   right: 25%;
   transform: translateX(50%) translateY(60%);
+}
+
+[dir="rtl"] main .MainContainer .Cols .ColRight2 {
+  right: auto;
+  left: 25%;
+  float: left;
+  transform: translateX(-50%) translateY(60%);
 }
 main .MainContainer .Cols .ColRight2 .ColText {
   text-align: center;
@@ -853,4 +884,78 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
     border-radius: 10px !important;
     margin-top: 0 !important;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* Language Toggle Styles */
+.LanguageToggle {
+  text-align: center;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  direction: ltr;
+}
+
+.LanguageToggle .toggle-container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  padding: 3px;
+}
+
+.LanguageToggle .toggle-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  text-decoration: none;
+  background-color: transparent;
+  border-radius: 17px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.LanguageToggle .toggle-container a img {
+  width: 36px;
+  height: 24px;
+  display: block;
+  border-radius: 17px;
+  object-fit: cover;
+}
+
+.LanguageToggle .toggle-container a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.LanguageToggle .toggle-container a.active {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 17px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Persian Font */
+[dir="rtl"] body,
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] p,
+[dir="rtl"] a,
+[dir="rtl"] nav,
+[dir="rtl"] span {
+  font-family: "Vazirmatn", sans-serif !important;
+}
+
+/*# sourceMappingURL=style.css.map */
