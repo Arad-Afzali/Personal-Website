@@ -148,12 +148,12 @@ table {
   }
 }
 body {
-  background-image: url("pictures/background.jpg");
+  background-image: url("pictures/background2.jpeg");
   background-repeat: no-repeat;
   background-size: auto;
   background-attachment: fixed;
   background-position: center;
-  background-color: rgb(78, 77, 77);
+  background-color: rgba(78, 77, 77, 0.70);
   background-blend-mode: multiply;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -419,6 +419,17 @@ main .MainContainer .Cols .ColRight .ColText .TechStackContainer .TechCategory .
   font-size: 14px;
   font-weight: 400;
   color: #ededed;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+main .MainContainer .Cols .ColRight .ColText .TechStackContainer .TechCategory .BadgeGrid .TechBadge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(15px) saturate(150%);
   -webkit-backdrop-filter: blur(15px) saturate(150%);
@@ -426,14 +437,17 @@ main .MainContainer .Cols .ColRight .ColText .TechStackContainer .TechCategory .
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  animation: GlassFadeIn 1s ease-out 1s backwards;
+}
+
+main .MainContainer .Cols .ColRight .ColText .TechStackContainer .TechCategory .BadgeGrid .TechBadge:hover::before {
+  background: rgba(249, 89, 89, 0.25);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 6px 20px 0 rgba(249, 89, 89, 0.3);
 }
 
 main .MainContainer .Cols .ColRight .ColText .TechStackContainer .TechCategory .BadgeGrid .TechBadge:hover {
-  background: rgba(249, 89, 89, 0.25);
-  border-color: rgba(255, 255, 255, 0.35);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px 0 rgba(249, 89, 89, 0.3);
 }
 main .MainContainer .Cols .ColRight2 {
   width: 50%;
