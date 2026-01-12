@@ -388,38 +388,52 @@ main .MainContainer .Cols .ColRight .ColText p {
   font-weight: 400;
   line-height: 2;
 }
-main .MainContainer .Cols .ColRight .ColText .Container .bars .element #progressbar {
-  background-color: #ededed;
-  border-radius: 13px;
-  /* (height of inner div) / 2 + padding */
-  padding: 3px;
-}
-main .MainContainer .Cols .ColRight .ColText .Container .bars .element #progressbar div {
-  display: flex;
-  background-color: #f95959;
-  width: 40%;
-  /* Adjust with JavaScript */
-  height: 15px;
-  border-radius: 10px;
-  justify-content: right;
-  align-items: center;
+/* Tech Stack Badge Styles */
+main .MainContainer .Cols .ColRight .ColText .TechStackContainer {
+  width: 100%;
 }
 
-[dir="rtl"] main .MainContainer .Cols .ColRight .ColText .Container .bars .element #progressbar div {
-  justify-content: left;
-  direction: ltr;
+main .MainContainer .Cols .ColRight .ColText .TechStackContainer .TechCategory {
+  margin-bottom: 30px;
 }
 
-main .MainContainer .Cols .ColRight .ColText .Container .bars .element #progressbar div span {
+main .MainContainer .Cols .ColRight .ColText .TechStackContainer .TechCategory .CategoryTitle {
   font-family: "Merriweather Sans", sans-serif;
-  font-size: 12px;
-  padding-right: 20px;
   color: #ededed;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-[dir="rtl"] main .MainContainer .Cols .ColRight .ColText .Container .bars .element #progressbar div span {
-  padding-right: 0;
-  padding-left: 20px;
+main .MainContainer .Cols .ColRight .ColText .TechStackContainer .TechCategory .BadgeGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+main .MainContainer .Cols .ColRight .ColText .TechStackContainer .TechCategory .BadgeGrid .TechBadge {
+  display: inline-block;
+  padding: 10px 18px;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ededed;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px) saturate(150%);
+  -webkit-backdrop-filter: blur(15px) saturate(150%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+main .MainContainer .Cols .ColRight .ColText .TechStackContainer .TechCategory .BadgeGrid .TechBadge:hover {
+  background: rgba(249, 89, 89, 0.25);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(249, 89, 89, 0.3);
 }
 main .MainContainer .Cols .ColRight2 {
   width: 50%;
