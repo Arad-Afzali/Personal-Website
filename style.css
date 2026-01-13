@@ -129,6 +129,99 @@ table {
   border-spacing: 0;
 }
 
+/* CSS Custom Properties */
+:root {
+  /* Colors */
+  --color-light: #ededed;
+  --color-white: #fff;
+  --color-red: #f95959;
+  --color-dark-bg: rgba(78, 77, 77, 0.70);
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-bg-hover: rgba(255, 255, 255, 0.15);
+  --glass-bg-active: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-border-hover: rgba(255, 255, 255, 0.3);
+  --glass-border-active: rgba(255, 255, 255, 0.5);
+  --glass-blur: blur(25px) saturate(200%);
+  --glass-blur-light: blur(15px) saturate(150%);
+  --glass-blur-medium: blur(10px);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  --glass-shadow-light: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
+  --glass-shadow-glow: 0 0 15px rgba(255, 255, 255, 0.2);
+  
+  /* Spacing */
+  --border-radius-sm: 17px;
+  --border-radius-md: 20px;
+  --border-radius-lg: 25px;
+  --border-radius-xl: 30px;
+  --border-radius-circle: 210px;
+  
+  /* Typography */
+  --font-main: "Merriweather Sans", sans-serif;
+  --font-persian: "Vazirmatn", sans-serif;
+  
+  /* Transitions */
+  --transition-fast: 0.3s ease;
+  --transition-medium: 0.4s;
+  
+  /* Text Shadows */
+  --text-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --text-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --text-shadow-lg: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+
+/* Enhanced focus indicators for all interactive elements */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  outline: 3px solid var(--color-red);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Focus visible for keyboard navigation only */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-red);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Enhanced navigation link focus */
+nav a:focus,
+nav a:focus-visible {
+  background: var(--glass-bg-active);
+  box-shadow: var(--glass-shadow-glow);
+  transform: scale(1.05);
+  transition: all var(--transition-fast);
+}
+
+/* Language toggle focus */
+.LanguageToggle a:focus,
+.LanguageToggle a:focus-visible {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 3px var(--color-red);
+  border-radius: 50%;
+}
+
 @keyframes TransitionIn {
   from {
     opacity: 0;
@@ -150,14 +243,11 @@ table {
 body {
   background-image: url("pictures/background2.jpeg");
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  background-color: rgba(78, 77, 77, 0.70);
+  background-color: var(--color-dark-bg);
   background-blend-mode: multiply;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
 }
 
 header .HeaderContainer {
@@ -172,60 +262,58 @@ header .HeaderContainer nav ul {
   align-items: center;
   gap: 5px;
   text-align: left;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(25px) saturate(200%);
-  -webkit-backdrop-filter: blur(25px) saturate(200%);
-  border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: var(--border-radius-xl);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   padding: 5px;
 }
 header .HeaderContainer nav ul li {
   display: block;
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: var(--font-main);
   font-size: 20px;
-  height: -moz-max-content;
   height: max-content;
-  width: -moz-max-content;
   width: max-content;
 }
 header .HeaderContainer nav ul li a {
   display: block;
   padding: 10px 20px;
-  color: #ededed;
+  color: var(--color-light);
   text-decoration: none;
   background-color: transparent;
-  border-radius: 25px;
+  border-radius: var(--border-radius-lg);
   border: 1px solid transparent;
-  transition: all 0.3s ease;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all var(--transition-fast);
+  text-shadow: var(--text-shadow-md);
 }
 header .HeaderContainer nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+  background-color: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
   transform: scale(1.05);
 }
 
 a:is(:link, :active, :visited).active {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  font-family: "Merriweather Sans", sans-serif;
+  color: var(--color-white);
+  background: var(--glass-bg-active);
+  backdrop-filter: var(--glass-blur-medium);
+  -webkit-backdrop-filter: var(--glass-blur-medium);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--glass-border-active);
+  font-family: var(--font-main);
   font-size: 20px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--glass-shadow-glow);
+  text-shadow: var(--text-shadow-lg);
 }
 
 a:link {
-  color: #ededed;
+  color: var(--color-light);
 }
 
 a:hover {
-  color: #f95959 !important;
-  transition: all 0.3s !important;
+  color: var(--color-red) !important;
+  transition: all var(--transition-fast) !important;
 }
 
 main {
@@ -235,12 +323,11 @@ main .MainContainer {
   margin-top: 120px;
 }
 main .MainContainer .ProfilePhoto .Image {
-  width: -moz-max-content;
   width: max-content;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 210px;
+  border-radius: var(--border-radius-circle);
   position: relative;
 }
 main .MainContainer .ProfilePhoto .Image::before {
@@ -248,74 +335,70 @@ main .MainContainer .ProfilePhoto .Image::before {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(25px) saturate(200%);
-  -webkit-backdrop-filter: blur(25px) saturate(200%);
-  border-radius: 210px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: var(--border-radius-circle);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   animation: GlassFadeIn 1s ease-out 1s backwards;
 }
 main .MainContainer .ProfilePhoto .Image img {
   display: block;
   width: 300px;
   height: 300px;
-  border-radius: 210px;
+  border-radius: var(--border-radius-circle);
   padding: 7px;
 }
 main .MainContainer .FirstText {
   margin-top: 50px;
-}
-main .MainContainer .FirstText .text {
   text-align: center;
 }
-main .MainContainer .FirstText .text h1 {
+main .MainContainer .FirstText h1 {
   display: inline-block;
-  color: #ededed;
-  font-family: "Merriweather Sans", sans-serif;
+  color: var(--color-light);
+  font-family: var(--font-main);
   font-weight: 500;
   font-size: 60px;
   position: relative;
   padding: 10px 15px;
 }
-main .MainContainer .FirstText .text h1::before {
+main .MainContainer .FirstText h1::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(25px) saturate(200%);
-  -webkit-backdrop-filter: blur(25px) saturate(200%);
-  border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: var(--border-radius-xl);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   animation: GlassFadeIn 1s ease-out 1s backwards;
 }
 main .MainContainer .SecondText {
   margin-top: 30px;
-}
-main .MainContainer .SecondText .text {
   text-align: center;
 }
-main .MainContainer .SecondText .text h2 {
+main .MainContainer .SecondText h2 {
   display: inline-block;
-  color: #ededed;
-  font-family: "Merriweather Sans", sans-serif;
+  color: var(--color-light);
+  font-family: var(--font-main);
   font-size: 30px;
   position: relative;
   padding: 10px 15px;
 }
-main .MainContainer .SecondText .text h2::before {
+main .MainContainer .SecondText h2::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(25px) saturate(200%);
-  -webkit-backdrop-filter: blur(25px) saturate(200%);
-  border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: var(--border-radius-xl);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   animation: GlassFadeIn 1s ease-out 1s backwards;
 }
 main .MainContainer .Cols {
@@ -537,9 +620,6 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
   .ColRight2 {
     transform: translateX(50%) translateY(80%) !important;
   }
-  .CodeBar img {
-    width: 18px !important;
-  }
 }
 @media screen and (max-width: 1450px) and (min-width: 1024px) {
   p {
@@ -548,9 +628,6 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
   .ColTitle h1 {
     font-size: 80px !important;
     transform: translateX(-50%) translateY(60%) !important;
-  }
-  .CodeBar img {
-    width: 11px !important;
   }
 }
 @media screen and (max-width: 1024px) and (min-width: 768px) {
@@ -573,12 +650,6 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
   .ColTitle h1 {
     font-size: 60px !important;
     transform: translateX(-50%) translateY(60%) !important;
-  }
-  .CodeBar {
-    margin-left: 25% !important;
-  }
-  .CodeBar img {
-    width: 9px !important;
   }
 }
 @media screen and (min-width: 425px) and (max-width: 768px) {
@@ -910,9 +981,6 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
   .ColText p {
     font-size: 18px !important;
   }
-  .CodeBar img {
-    width: 13px !important;
-  }
   .ColText {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -1009,6 +1077,20 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
+/* Skills page specific styles */
+.ColRight--skills {
+  transform: translateX(50%) translateY(20%);
+}
+
+.ColRight--skills .ColText {
+  margin-top: 20px;
+}
+
+/* Italian contact page specific */
+[lang="it"] .ColTitle--contact-it {
+  margin-top: 110px;
+}
+
 /* Persian Font */
 [dir="rtl"] body,
 [dir="rtl"] h1,
@@ -1046,4 +1128,103 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/* Inline Style Consolidation */
+/* Contact page social container spacing */
+@media screen and (max-width: 425px) {
+  .SocialContainer {
+    margin-top: -20px !important;
+  }
+  
+  #resume {
+    margin-top: 80px !important;
+  }
+}
+
+/* Italian navigation adjustments for mobile only */
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  [lang="it"] nav li {
+    font-size: 9px !important;
+  }
+  [lang="it"] nav li a {
+    padding: 6px 7px !important;
+  }
+  [lang="it"] nav .active {
+    font-size: 9px !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  [lang="it"] nav li {
+    font-size: 8px !important;
+  }
+  [lang="it"] nav li a {
+    padding: 5px 5px !important;
+  }
+}
+
+/* Persian (RTL) specific media queries */
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  [dir="rtl"] nav li {
+    font-size: 9px !important;
+  }
+  [dir="rtl"] nav li a {
+    padding: 6px 7px !important;
+  }
+  [dir="rtl"] nav .active {
+    font-size: 9px !important;
+  }
+  [dir="rtl"] .MainContainer {
+    margin-top: 50px !important;
+  }
+  [dir="rtl"] .Cols {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  [dir="rtl"] .ColTitle {
+    position: relative !important;
+    width: 100% !important;
+    order: 1 !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+  }
+  [dir="rtl"] .ColTitle h1 {
+    position: static !important;
+    transform: none !important;
+    font-size: 40px !important;
+  }
+  [dir="rtl"] .ColRight {
+    position: relative !important;
+    width: 100% !important;
+    order: 2 !important;
+    transform: none !important;
+    float: none !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+  }
+  [dir="rtl"] .ColText {
+    width: 90% !important;
+    margin: 0 auto !important;
+  }
+  [dir="rtl"] .ColText p {
+    font-size: 14px !important;
+  }
+  [dir="rtl"] .ColRight2 {
+    position: relative !important;
+    width: 100% !important;
+    order: 2 !important;
+    transform: none !important;
+    float: none !important;
+    top: auto !important;
+    right: auto !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  [dir="rtl"] nav li {
+    font-size: 8px !important;
+  }
+  [dir="rtl"] nav li a {
+    padding: 5px 5px !important;
+  }
+}

@@ -4,15 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Arad Afzali, Computer Engineer, Arad Haji Ali Afzali, Cybersecurity Engineering" />
+    <meta name="description" content="personal website, biography" />
+    <meta name="author" content="Arad Afzali" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aradafzali.com/aboutme.html" />
+    <meta property="og:title" content="About Arad Afzali - Computer Engineer" />
+    <meta property="og:description" content="Learn more about my background, education, and journey in computer engineering and cybersecurity." />
+    <meta property="og:image" content="https://aradafzali.com/pictures/profilephoto.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://aradafzali.com/aboutme.html" />
+    <meta property="twitter:title" content="About Arad Afzali - Computer Engineer" />
+    <meta property="twitter:description" content="Learn more about my background, education, and journey in computer engineering and cybersecurity." />
+    <meta property="twitter:image" content="https://aradafzali.com/pictures/profilephoto.jpg" />
     
     <!-- Mobile Browser Theme Color -->
     <meta name="theme-color" content="#000000" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     
-    <link rel="stylesheet" href="style.css" />
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.min.css" as="style" />
+    <link rel="preload" href="components.js" as="script" />
+    <link rel="preload" href="activePage.js" as="script" />
+    
+    <link rel="stylesheet" href="style.min.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans:wght@400;500&display=swap"
@@ -20,39 +43,19 @@
     />
     <title>Arad Afzali - About me</title>
     <link rel="icon" href="./pictures/logo.png">
-
+    <link rel="apple-touch-icon" href="./pictures/logo.png">
+    <link rel="manifest" href="./manifest.json">
   </head>
   <body>
-    <div class="LanguageToggle">
-      <div class="toggle-container">
-        <a href="aboutme.html" class="active"><img src="pictures/flag-uk.svg" alt="English"></a>
-        <a href="it/aboutme.html"><img src="pictures/flag-italy.svg" alt="Italian"></a>
-      </div>
-    </div>
-    <header>
-      <div class="HeaderContainer">
-        <nav>
-          <ul>
-            <li>
-              <a href="index.html"><span>Home</span></a>
-            </li>
-            <li>
-              <a class="active" href="aboutme.html"><span>About me</span></a>
-            </li>
-            <li>
-              <a href="skills.html"><span>My skills</span></a>
-            </li>
-            <li>
-              <a href="contact.html"><span>Contact me</span></a>
-            </li>
-            <li>
-              <a href="resume.html"><span>Resume</span></a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main>
+    <noscript>
+      <style>
+        .noscript-warning{position:fixed;top:0;left:0;right:0;background:#ff9800;color:#000;padding:10px;text-align:center;z-index:10000;font-family:sans-serif;}
+      </style>
+      <div class="noscript-warning">JavaScript is required for navigation. Please enable JavaScript for the best experience.</div>
+    </noscript>
+    <div id="language-toggle"></div>
+    <div id="navigation"></div>
+    <main id="main-content" role="main">
       <div class="MainContainer">
         <div class="Cols">
           <div class="ColTitle">
@@ -82,5 +85,7 @@
         </div>
       </div>
     </main>
+    <script src="components.js"></script>
+    <script src="activePage.js" defer></script>
   </body>
 </html>

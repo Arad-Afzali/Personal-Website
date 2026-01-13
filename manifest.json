@@ -1,0 +1,24 @@
+{
+  "name": "Arad Afzali - Portfolio",
+  "short_name": "Arad Afzali",
+  "description": "Computer Engineer & MSc Student in Cybersecurity Engineering",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "pictures/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "pictures/logo1.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

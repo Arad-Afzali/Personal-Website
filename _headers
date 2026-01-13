@@ -1,0 +1,23 @@
+# Security Headers for GitHub Pages
+# To enable these, you'll need to configure your hosting provider
+
+# Content Security Policy
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';
+
+# Prevent clickjacking attacks
+X-Frame-Options: DENY
+
+# Prevent MIME type sniffing
+X-Content-Type-Options: nosniff
+
+# Enable XSS protection
+X-XSS-Protection: 1; mode=block
+
+# Force HTTPS
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+# Referrer Policy
+Referrer-Policy: strict-origin-when-cross-origin
+
+# Permissions Policy
+Permissions-Policy: geolocation=(), microphone=(), camera=()

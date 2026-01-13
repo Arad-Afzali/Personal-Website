@@ -4,16 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style.css" />
-    <style>
-      @media screen and (max-width: 425px) {
-        .SocialContainer {
-          margin-top: -20px !important;
-        }
-      }
-    </style>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <meta name="keywords" content="آراد افضلی, مهندس کامپیوتر, آراد حاجی علی افضلی, مهندسی امنیت سایبری" />
+    <meta name="description" content="وب سایت شخصی، بیوگرافی، تماس" />
+    <meta name="author" content="آراد افضلی" />
+        <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aradafzali.com/fa/contact.html" />
+    <meta property="og:title" content="تماس - آراد افضلی" />
+    <meta property="og:description" content="از طریق ایمیل یا شبکه‌های اجتماعی با من در ارتباط باشید." />
+    <meta property="og:image" content="https://aradafzali.com/pictures/profilephoto.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://aradafzali.com/fa/contact.html" />
+    <meta property="twitter:title" content="تماس - آراد افضلی" />
+    <meta property="twitter:description" content="از طریق ایمیل یا شبکه‌های اجتماعی با من در ارتباط باشید." />
+    <meta property="twitter:image" content="https://aradafzali.com/pictures/profilephoto.jpg" />
+        <!-- Preload critical resources -->
+    <link rel="preload" href="../style.min.css" as="style" />
+    <link rel="preload" href="../components.js" as="script" />
+    <link rel="preload" href="../activePage.js" as="script" />
+    
+    <link rel="stylesheet" href="../style.min.css" />
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans:wght@400;500&family=Vazirmatn:wght@400;500&display=swap"
@@ -21,7 +36,6 @@
     />
     <title>آراد افضلی - تماس</title>
     <link rel="icon" href="../pictures/logo.png">
-
   </head>
   <body>
     <div class="LanguageToggle">
@@ -45,7 +59,7 @@
               <a href="skills.html"><span>مهارت‌های من</span></a>
             </li>
             <li>
-              <a class="active" href="contact.html"><span>تماس با من</span></a>
+              <a href="contact.html"><span>تماس با من</span></a>
             </li>
             <li>
               <a href="resume.html"><span>رزومه</span></a>
@@ -54,26 +68,26 @@
         </nav>
       </div>
     </header>
-    <main>
+    <main id="main-content" role="main">
       <div class="MainContainer">
         <div class="Cols">
           <div class="ColRight2">
             <div class="ColText">
               <div class="SocialContainer">
                 <a href="mailto:me@aradafzali.com"
-                  ><img src="../pictures/mail.svg" alt=""
+                  ><img src="../pictures/mail.svg" alt="ایمیل"
                 /></a>
                 <a href="https://t.me/AradAfzali"
-                  ><img src="../pictures/Telegram.svg" alt=""
+                  ><img src="../pictures/Telegram.svg" alt="تلگرام"
                 /></a>
                 <a
                   href="https://www.linkedin.com/in/arad-afzali
                 "
-                  ><img src="../pictures/Linkedin.svg" alt=""
+                  ><img src="../pictures/Linkedin.svg" alt="لینکدین"
                 /></a>
                 <a
                 href="https://github.com/Arad-Afzali"
-                ><img src="../pictures/github.svg" alt=""
+                ><img src="../pictures/github.svg" alt="گیت‌هاب"
               /></a>
               </div>
             </div>
@@ -87,5 +101,7 @@
         </div>
       </div>
     </main>
+    <script src="../components.js"></script>
+    <script src="../activePage.js" defer></script>
   </body>
 </html>

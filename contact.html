@@ -4,20 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Arad Afzali, Computer Engineer, Arad Haji Ali Afzali, Cybersecurity Engineering" />
+    <meta name="description" content="personal website, biography, contact" />
+    <meta name="author" content="Arad Afzali" />
+        <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aradafzali.com/contact.html" />
+    <meta property="og:title" content="Contact Arad Afzali" />
+    <meta property="og:description" content="Get in touch via email or connect on social media platforms." />
+    <meta property="og:image" content="https://aradafzali.com/pictures/profilephoto.jpg" />
     
-    <!-- Mobile Browser Theme Color -->
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://aradafzali.com/contact.html" />
+    <meta property="twitter:title" content="Contact Arad Afzali" />
+    <meta property="twitter:description" content="Get in touch via email or connect on social media platforms." />
+    <meta property="twitter:image" content="https://aradafzali.com/pictures/profilephoto.jpg" />
+        <!-- Mobile Browser Theme Color -->
     <meta name="theme-color" content="#000000" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     
-    <link rel="stylesheet" href="style.css" />    <style>
-      @media screen and (max-width: 425px) {
-        .SocialContainer {
-          margin-top: -20px !important;
-        }
-      }
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.min.css" as="style" />
+    <link rel="preload" href="components.js" as="script" />
+    <link rel="preload" href="activePage.js" as="script" />
+    
+    <link rel="stylesheet" href="style.min.css" />
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans:wght@400;500&display=swap"
@@ -25,7 +41,8 @@
     />
     <title>Arad Afzali - Contact</title>
     <link rel="icon" href="./pictures/logo.png">
-
+    <link rel="apple-touch-icon" href="./pictures/logo.png">
+    <link rel="manifest" href="./manifest.json">
   </head>
   <body>
     <div class="LanguageToggle">
@@ -48,7 +65,7 @@
               <a href="skills.html"><span>My skills</span></a>
             </li>
             <li>
-              <a class="active" href="contact.html"><span>Contact me</span></a>
+              <a href="contact.html"><span>Contact me</span></a>
             </li>
             <li>
               <a href="resume.html"><span>Resume</span></a>
@@ -57,7 +74,7 @@
         </nav>
       </div>
     </header>
-    <main>
+    <main id="main-content" role="main">
       <div class="MainContainer">
         <div class="Cols">
           <div class="ColTitle">
@@ -70,19 +87,19 @@
             <div class="ColText">
               <div class="SocialContainer">
                 <a href="mailto:me@aradafzali.com"
-                  ><img src="./pictures/mail.svg" alt=""
+                  ><img src="./pictures/mail.svg" alt="Email"
                 /></a>
                 <a href="https://t.me/AradAfzali"
-                  ><img src="./pictures/Telegram.svg" alt=""
+                  ><img src="./pictures/Telegram.svg" alt="Telegram"
                 /></a>
                 <a
                   href="https://www.linkedin.com/in/arad-afzali
                 "
-                  ><img src="./pictures/Linkedin.svg" alt=""
+                  ><img src="./pictures/Linkedin.svg" alt="LinkedIn"
                 /></a>
                 <a
                 href="https://github.com/Arad-Afzali"
-                ><img src="./pictures/github.svg" alt=""
+                ><img src="./pictures/github.svg" alt="GitHub"
               /></a>
               </div>
             </div>
@@ -90,5 +107,7 @@
         </div>
       </div>
     </main>
+    <script src="components.js"></script>
+    <script src="activePage.js" defer></script>
   </body>
 </html>
