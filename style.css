@@ -1125,6 +1125,33 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
   margin-top: 20px;
 }
 
+/* Projects page specific styles */
+.ProjectEntry {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ProjectEntryTitle {
+  font-family: "Merriweather Sans", sans-serif;
+  color: #ededed;
+  font-size: 19px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.ColRight--projects .ColText p {
+  font-size: 13px !important;
+  line-height: 1.7;
+}
+
+.ColRight--projects .ColText p.ProjectsIntro {
+  font-size: 16px !important;
+  line-height: 1.8;
+  margin-bottom: 6px;
+}
+
 /* Italian contact page specific */
 [lang="it"] .ColTitle--contact-it {
   margin-top: 110px;
@@ -1143,6 +1170,9 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
 
 /* Mobile Background Fix */
 @media screen and (max-width: 768px) {
+  .CategoryTitle {
+    margin-bottom: 19px;
+  }
   body {
     background-image: none !important;
     background-color: transparent !important;
