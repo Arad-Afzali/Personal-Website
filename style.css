@@ -661,7 +661,7 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
     gap: 3px;
   }
   nav li {
-    font-size: 12px !important;
+    font-size: 14px !important;
     margin: 0px;
   }
   nav li a {
@@ -669,7 +669,7 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
     border: 1px solid transparent !important;
   }
   nav .active {
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
   nav .active a {
     padding: 8px 12px !important;
