@@ -1,0 +1,11 @@
+# Allow all search engines to crawl all content
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://aradafzali.com/sitemap.xml
+
+# Disallow crawling of specific files (optional)
+Disallow: /scss/
+Disallow: /pictures/background2-original.jpeg
+Disallow: /pictures/background2-mobile-original.jpeg

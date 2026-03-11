@@ -11,14 +11,35 @@
     <meta name="description" content="personal website , biography" />
     <meta name="author" content="Arad Afzali" />
     
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aradafzali.com/" />
+    <meta property="og:title" content="Arad Afzali - Computer Engineer & Cybersecurity Student" />
+    <meta property="og:description" content="MSc Student in Cybersecurity Engineering. Passionate about secure systems and innovative technology solutions." />
+    <meta property="og:image" content="https://aradafzali.com/pictures/profilephoto.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://aradafzali.com/" />
+    <meta property="twitter:title" content="Arad Afzali - Computer Engineer & Cybersecurity Student" />
+    <meta property="twitter:description" content="MSc Student in Cybersecurity Engineering. Passionate about secure systems and innovative technology solutions." />
+    <meta property="twitter:image" content="https://aradafzali.com/pictures/profilephoto.jpg" />
+    
     <!-- Mobile Browser Theme Color -->
     <meta name="theme-color" content="#000000" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     
-    <link rel="stylesheet" href="style.css" />
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.min.css" as="style" />
+    <link rel="preload" href="./pictures/profilephoto.jpg" as="image" />
+    <link rel="preload" href="components.js" as="script" />
+    <link rel="preload" href="activePage.js" as="script" />
+    
+    <link rel="stylesheet" href="style.min.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans:wght@400;500&display=swap"
@@ -26,55 +47,34 @@
     />
     <title>Arad Afzali - Home</title>
     <link rel="icon" href="./pictures/logo.png">
+    <link rel="apple-touch-icon" href="./pictures/logo.png">
+    <link rel="manifest" href="./manifest.json">
   </head>
   <body>
-    <div class="LanguageToggle">
-      <div class="toggle-container">
-        <a href="index.html" class="active"><img src="pictures/flag-uk.svg" alt="English"></a>
-        <a href="it/index.html"><img src="pictures/flag-italy.svg" alt="Italian"></a>
-      </div>
-    </div>
-    <header>
-      <div class="HeaderContainer">
-        <nav>
-          <ul>
-            <li>
-              <a class="active" href="index.html"><span>Home</span></a>
-            </li>
-            <li>
-              <a href="aboutme.html"><span>About me</span></a>
-            </li>
-            <li>
-              <a href="skills.html"><span>My skills</span></a>
-            </li>
-            <li>
-              <a href="contact.html"><span>Contact me</span></a>
-            </li>
-            <li>
-              <a href="resume.html"><span>Resume</span></a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main>
+    <noscript>
+      <style>
+        .noscript-warning{position:fixed;top:0;left:0;right:0;background:#ff9800;color:#000;padding:10px;text-align:center;z-index:10000;font-family:sans-serif;}
+      </style>
+      <div class="noscript-warning">JavaScript is required for navigation. Please enable JavaScript for the best experience.</div>
+    </noscript>
+    <div id="language-toggle"></div>
+    <div id="navigation"></div>
+    <main id="main-content" role="main">
       <div class="MainContainer">
         <div class="ProfilePhoto">
           <div class="Image">
-            <img src="./pictures/profilephoto.jpg" alt="Arad Afzali" fetchpriority="high" loading="eager"/>
+            <img src="./pictures/profilephoto.jpg" alt="Arad Afzali" fetchpriority="high" loading="eager" width="300" height="300" />
           </div>
         </div>
         <div class="FirstText">
-          <div class="text">
-            <h1>Hi, I'm Arad Afzali.</h1>
-          </div>
+          <h1>Hi, I'm Arad Afzali.</h1>
         </div>
         <div class="SecondText">
-          <div class="text">
-            <h2>Computer Engineer | MSc Student in Cybersecurity Engineering</h2>
-          </div>
+          <h2>Computer Engineer | MSc Student in Cybersecurity Engineering</h2>
         </div>
       </div>
     </main>
+    <script src="components.js"></script>
+    <script src="activePage.js" defer></script>
   </body>
 </html>

@@ -10,9 +10,31 @@
     />
     <meta name="description" content="وب سایت شخصی، بیوگرافی" />
     <meta name="author" content="آراد افضلی" />
-    <link rel="stylesheet" href="../style.css" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aradafzali.com/fa/" />
+    <meta property="og:title" content="آراد افضلی - مهندس کامپیوتر" />
+    <meta property="og:description" content="دانشجوی کارشناسی ارشد مهندسی امنیت سایبری. علاقه‌مند به سیستم‌های امن و راهکارهای فناوری نوآورانه." />
+    <meta property="og:image" content="https://aradafzali.com/pictures/profilephoto.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://aradafzali.com/fa/" />
+    <meta property="twitter:title" content="آراد افضلی - مهندس کامپیوتر" />
+    <meta property="twitter:description" content="دانشجوی کارشناسی ارشد مهندسی امنیت سایبری. علاقه‌مند به سیستم‌های امن و راهکارهای فناوری نوآورانه." />
+    <meta property="twitter:image" content="https://aradafzali.com/pictures/profilephoto.jpg" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="../style.min.css" as="style" />
+    <link rel="preload" href="../pictures/profilephoto.jpg" as="image" />
+    <link rel="preload" href="../components.js" as="script" />
+    <link rel="preload" href="../activePage.js" as="script" />
+    
+    <link rel="stylesheet" href="../style.min.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans:wght@400;500&family=Vazirmatn:wght@400;500&display=swap"
@@ -20,56 +42,34 @@
     />
     <title>آراد افضلی - خانه</title>
     <link rel="icon" href="../pictures/logo.png">
+    <link rel="apple-touch-icon" href="../pictures/logo.png">
+    <link rel="manifest" href="../manifest.json">
   </head>
   <body>
-    <div class="LanguageToggle">
-      <div class="toggle-container">
-        <a href="../index.html"><img src="../pictures/flag-uk.svg" alt="English"></a>
-        <a href="../it/index.html"><img src="../pictures/flag-italy.svg" alt="Italian"></a>
-        <a href="index.html" class="active"><img src="../pictures/flag-iran.svg" alt="Persian"></a>
-      </div>
-    </div>
-    <header>
-      <div class="HeaderContainer">
-        <nav>
-          <ul>
-            <li>
-              <a class="active" href="index.html"><span>خانه</span></a>
-            </li>
-            <li>
-              <a href="aboutme.html"><span>درباره من</span></a>
-            </li>
-            <li>
-              <a href="skills.html"><span>مهارت‌های من</span></a>
-            </li>
-            <li>
-              <a href="contact.html"><span>تماس با من</span></a>
-            </li>
-            <li>
-              <a href="resume.html"><span>رزومه</span></a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main>
+    <noscript>
+      <style>
+        .noscript-warning{position:fixed;top:0;left:0;right:0;background:#ff9800;color:#000;padding:10px;text-align:center;z-index:10000;font-family:sans-serif;}
+      </style>
+      <div class="noscript-warning">جاوااسکریپت برای ناوبری ضروری است. لطفاً جاوااسکریپت را فعال کنید.</div>
+    </noscript>
+    <div id="language-toggle"></div>
+    <div id="navigation"></div>
+    <main id="main-content" role="main">
       <div class="MainContainer">
         <div class="ProfilePhoto">
           <div class="Image">
-            <img src="../pictures/profilephoto.jpg" alt="آراد افضلی" fetchpriority="high" loading="eager"/>
+            <img src="../pictures/profilephoto.jpg" alt="آراد افضلی" fetchpriority="high" loading="eager" width="300" height="300" />
           </div>
         </div>
         <div class="FirstText">
-          <div class="text">
-            <h1>سلام، من آراد افضلی هستم.</h1>
-          </div>
+          <h1>سلام، من آراد افضلی هستم.</h1>
         </div>
         <div class="SecondText">
-          <div class="text">
-            <h2>مهندس کامپیوتر | دانشجوی کارشناسی ارشد مهندسی امنیت سایبری</h2>
-          </div>
+          <h2>مهندس کامپیوتر | دانشجوی کارشناسی ارشد مهندسی امنیت سایبری</h2>
         </div>
       </div>
     </main>
+    <script src="../components.js"></script>
+    <script src="../activePage.js" defer></script>
   </body>
 </html>

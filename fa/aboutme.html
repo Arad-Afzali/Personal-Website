@@ -4,96 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style.css" />
-    <style>
-      @media screen and (min-width: 320px) and (max-width: 425px) {
-        nav li {
-          font-size: 9px !important;
-        }
-        nav li a {
-          padding: 6px 7px !important;
-        }
-        nav .active {
-          font-size: 9px !important;
-        }
-        .MainContainer {
-          margin-top: 50px !important;
-        }
-        .Cols {
-          display: flex !important;
-          flex-direction: column !important;
-        }
-        .ColTitle {
-          position: relative !important;
-          width: 100% !important;
-          order: 1 !important;
-          text-align: center !important;
-          margin: 10px 0 20px !important;
-        }
-        .ColTitle h1 {
-          position: static !important;
-          margin: 0 auto !important;
-          font-size: 52px !important;
-          line-height: 1.1 !important;
-          text-align: center !important;
-          transform: none !important;
-        }
-        .ColRight {
-          position: relative !important;
-          width: 100% !important;
-          float: none !important;
-          order: 2 !important;
-          margin-top: 10px !important;
-        }
-        .ColText {
-          width: 90% !important;
-          margin: 0 auto !important;
-        }
-      }
-      @media screen and (max-width: 320px) {
-        nav li {
-          font-size: 8px !important;
-        }
-        nav li a {
-          padding: 5px 5px !important;
-        }
-        .MainContainer {
-          margin-top: 50px !important;
-        }
-        .Cols {
-          display: flex !important;
-          flex-direction: column !important;
-        }
-        .ColTitle {
-          position: relative !important;
-          width: 100% !important;
-          order: 1 !important;
-          text-align: center !important;
-          margin: 10px 0 18px !important;
-        }
-        .ColTitle h1 {
-          position: static !important;
-          margin: 0 auto !important;
-          font-size: 46px !important;
-          line-height: 1.1 !important;
-          text-align: center !important;
-          transform: none !important;
-        }
-        .ColRight {
-          position: relative !important;
-          width: 100% !important;
-          float: none !important;
-          order: 2 !important;
-          margin-top: 10px !important;
-        }
-        .ColText {
-          width: 90% !important;
-          margin: 0 auto !important;
-        }
-      }
-    </style>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <meta name="keywords" content="آراد افضلی, مهندس کامپیوتر, آراد حاجی علی افضلی, مهندسی امنیت سایبری" />
+    <meta name="description" content="وب سایت شخصی، بیوگرافی" />
+    <meta name="author" content="آراد افضلی" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aradafzali.com/fa/aboutme.html" />
+    <meta property="og:title" content="درباره من - آراد افضلی" />
+    <meta property="og:description" content="بیشتر درباره سوابق، تحصیلات و مسیر من در مهندسی کامپیوتر و امنیت سایبری بدانید." />
+    <meta property="og:image" content="https://aradafzali.com/pictures/profilephoto.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://aradafzali.com/fa/aboutme.html" />
+    <meta property="twitter:title" content="درباره من - آراد افضلی" />
+    <meta property="twitter:description" content="بیشتر درباره سوابق، تحصیلات و مسیر من در مهندسی کامپیوتر و امنیت سایبری بدانید." />
+    <meta property="twitter:image" content="https://aradafzali.com/pictures/profilephoto.jpg" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="../style.min.css" as="style" />
+    <link rel="preload" href="../components.js" as="script" />
+    <link rel="preload" href="../activePage.js" as="script" />
+    
+    <link rel="stylesheet" href="../style.min.css" />
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans:wght@400;500&family=Vazirmatn:wght@400;500&display=swap"
@@ -101,40 +38,11 @@
     />
     <title>آراد افضلی - درباره من</title>
     <link rel="icon" href="../pictures/logo.png">
-
   </head>
   <body>
-    <div class="LanguageToggle">
-      <div class="toggle-container">
-        <a href="../aboutme.html"><img src="../pictures/flag-uk.svg" alt="English"></a>
-        <a href="../it/aboutme.html"><img src="../pictures/flag-italy.svg" alt="Italian"></a>
-        <a href="aboutme.html" class="active"><img src="../pictures/flag-iran.svg" alt="Persian"></a>
-      </div>
-    </div>
-    <header>
-      <div class="HeaderContainer">
-        <nav>
-          <ul>
-            <li>
-              <a href="index.html"><span>خانه</span></a>
-            </li>
-            <li>
-              <a class="active" href="aboutme.html"><span>درباره من</span></a>
-            </li>
-            <li>
-              <a href="skills.html"><span>مهارت‌های من</span></a>
-            </li>
-            <li>
-              <a href="contact.html"><span>تماس با من</span></a>
-            </li>
-            <li>
-              <a href="resume.html"><span>رزومه</span></a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main>
+    <div id="language-toggle"></div>
+    <div id="navigation"></div>
+    <main id="main-content" role="main">
       <div class="MainContainer">
         <div class="Cols">
           <div class="ColRight">
@@ -164,5 +72,7 @@
         </div>
       </div>
     </main>
+    <script src="../components.js"></script>
+    <script src="../activePage.js" defer></script>
   </body>
 </html>

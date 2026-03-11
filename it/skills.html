@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Arad Afzali, Ingegnere Informatico, Arad Haji Ali Afzali, Ingegneria della Cybersicurezza" />
+    <meta name="description" content="sito web personale, biografia, competenze" />
+    <meta name="author" content="Arad Afzali" />
     <meta
       name="keywords"
       content="Arad Afzali, Ingegnere Informatico, Arad Haji Ali Afzali"
@@ -11,35 +14,34 @@
     <meta name="description" content="sito web personale, biografia" />
     <meta name="author" content="Arad Afzali" />
     
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aradafzali.com/it/skills.html" />
+    <meta property="og:title" content="Competenze - Arad Afzali" />
+    <meta property="og:description" content="Esplora la mia esperienza tecnica in programmazione, cybersicurezza e sviluppo software." />
+    <meta property="og:image" content="https://aradafzali.com/pictures/profilephoto.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://aradafzali.com/it/skills.html" />
+    <meta property="twitter:title" content="Competenze - Arad Afzali" />
+    <meta property="twitter:description" content="Esplora la mia esperienza tecnica in programmazione, cybersicurezza e sviluppo software." />
+    <meta property="twitter:image" content="https://aradafzali.com/pictures/profilephoto.jpg" />
+    
     <!-- Mobile Browser Theme Color -->
     <meta name="theme-color" content="#000000" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     
-    <link rel="stylesheet" href="../style.css" />
-    <style>
-      @media screen and (min-width: 320px) and (max-width: 425px) {
-        nav li {
-          font-size: 9px !important;
-        }
-        nav li a {
-          padding: 6px 7px !important;
-        }
-        nav .active {
-          font-size: 9px !important;
-        }
-      }
-      @media screen and (max-width: 320px) {
-        nav li {
-          font-size: 8px !important;
-        }
-        nav li a {
-          padding: 5px 5px !important;
-        }
-      }
-    </style>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Preload critical resources -->
+    <link rel="preload" href="../style.min.css" as="style" />
+    <link rel="preload" href="../components.js" as="script" />
+    <link rel="preload" href="../activePage.js" as="script" />
+    
+    <link rel="stylesheet" href="../style.min.css" />
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans:wght@400;500&display=swap"
@@ -47,39 +49,11 @@
     />
     <title>Arad Afzali - Competenze</title>
     <link rel="icon" href="../pictures/logo.png">
-
   </head>
   <body>
-    <div class="LanguageToggle">
-      <div class="toggle-container">
-        <a href="../skills.html"><img src="../pictures/flag-uk.svg" alt="English"></a>
-        <a href="skills.html" class="active"><img src="../pictures/flag-italy.svg" alt="Italian"></a>
-      </div>
-    </div>
-    <header>
-      <div class="HeaderContainer">
-        <nav>
-          <ul>
-            <li>
-              <a href="index.html"><span>Home</span></a>
-            </li>
-            <li>
-              <a href="aboutme.html"><span>Chi sono</span></a>
-            </li>
-            <li>
-              <a class="active" href="skills.html"><span>Competenze</span></a>
-            </li>
-            <li>
-              <a href="contact.html"><span>Contattami</span></a>
-            </li>
-            <li>
-              <a href="resume.html"><span>Curriculum</span></a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main>
+    <div id="language-toggle"></div>
+    <div id="navigation"></div>
+    <main id="main-content" role="main">
       <div class="MainContainer">
         <div class="Cols">
           <div class="ColTitle">
@@ -88,22 +62,35 @@
               competenze
             </h1>
           </div>
-          <div class="ColRight" style="transform: translateX(50%) translateY(20%)">
-            <div class="ColText" style="margin-top: 20px">
+          <div class="ColRight ColRight--skills">
+            <div class="ColText">
               <div class="TechStackContainer">
                 <div class="TechCategory">
-                  <h3 class="CategoryTitle">Linguaggi & Scripting</h3>
+                  <h3 class="CategoryTitle">Linguaggi</h3>
                   <div class="BadgeGrid">
                     <span class="TechBadge">Python</span>
-                    <span class="TechBadge">Go</span>
+                    <span class="TechBadge">C</span>
+                    <span class="TechBadge">Go (Golang)</span>
                     <span class="TechBadge">SQL</span>
-                    <span class="TechBadge">Bash/Shell</span>
+                    <span class="TechBadge">PHP</span>
+                    <span class="TechBadge">Bash Scripting</span>
                   </div>
                 </div>
 
                 <div class="TechCategory">
-                  <h3 class="CategoryTitle">Web & Frontend</h3>
+                  <h3 class="CategoryTitle">Programmazione Embedded e di Sistema</h3>
                   <div class="BadgeGrid">
+                    <span class="TechBadge">FreeRTOS</span>
+                    <span class="TechBadge">ARM Cortex-M3</span>
+                    <span class="TechBadge">RTOS Task Scheduling</span>
+                    <span class="TechBadge">Cyclic Executives</span>
+                  </div>
+                </div>
+
+                <div class="TechCategory">
+                  <h3 class="CategoryTitle">Sviluppo Web</h3>
+                  <div class="BadgeGrid">
+                    <span class="TechBadge">Django</span>
                     <span class="TechBadge">HTML5</span>
                     <span class="TechBadge">CSS3</span>
                     <span class="TechBadge">JavaScript</span>
@@ -112,11 +99,24 @@
                 </div>
 
                 <div class="TechCategory">
-                  <h3 class="CategoryTitle">Sistemi & Infrastruttura</h3>
+                  <h3 class="CategoryTitle">Sistemi e Amministrazione</h3>
                   <div class="BadgeGrid">
-                    <span class="TechBadge">Linux (LPIC-2)</span>
-                    <span class="TechBadge">Gestione CDN</span>
-                    <span class="TechBadge">Ottimizzazione Server</span>
+                    <span class="TechBadge">Linux (CentOS, Ubuntu)</span>
+                    <span class="TechBadge">Apache</span>
+                    <span class="TechBadge">Nginx</span>
+                  </div>
+                </div>
+
+                <div class="TechCategory">
+                  <h3 class="CategoryTitle">Reti e Strumenti</h3>
+                  <div class="BadgeGrid">
+                    <span class="TechBadge">CDN Management</span>
+                    <span class="TechBadge">DNS</span>
+                    <span class="TechBadge">SSL/TLS</span>
+                    <span class="TechBadge">Git</span>
+                    <span class="TechBadge">GitHub</span>
+                    <span class="TechBadge">Jira</span>
+                    <span class="TechBadge">cPanel/DirectAdmin</span>
                   </div>
                 </div>
               </div>
@@ -125,5 +125,7 @@
         </div>
       </div>
     </main>
+    <script src="../components.js"></script>
+    <script src="../activePage.js" defer></script>
   </body>
 </html>
