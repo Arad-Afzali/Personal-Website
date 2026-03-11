@@ -5,8 +5,7 @@ const siteConfig = {
       { href: 'index.html', label: 'Home' },
       { href: 'aboutme.html', label: 'About me' },
       { href: 'skills.html', label: 'My skills' },
-      { href: 'contact.html', label: 'Contact me' },
-      { href: 'resume.html', label: 'Resume' }
+      { href: 'contact.html', label: 'Contact me' }
     ],
     languageFlags: [
       { href: 'index.html', src: 'pictures/flag-uk.svg', alt: 'English', lang: 'en' },
@@ -18,8 +17,7 @@ const siteConfig = {
       { href: 'index.html', label: 'Home' },
       { href: 'aboutme.html', label: 'Su di me' },
       { href: 'skills.html', label: 'Le mie competenze' },
-      { href: 'contact.html', label: 'Contattami' },
-      { href: 'resume.html', label: 'Curriculum' }
+      { href: 'contact.html', label: 'Contattami' }
     ],
     languageFlags: [
       { href: '../index.html', src: '../pictures/flag-uk.svg', alt: 'English', lang: 'en' },
