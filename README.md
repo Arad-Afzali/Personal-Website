@@ -18,10 +18,11 @@ Here are the screenshots of each page in desktop mode and in mobile view.
 
 ## Mobile View
 
-![Index](screenshots/mobile_index.png)
-
-
-![Contact](screenshots/mobile_contact.png)
-
-
+<p>
+  <img src="screenshots/mobile_index.png" width="18%" alt="Index" />
+  <img src="screenshots/mobile_aboutme.png" width="18%" alt="About Me" />
+  <img src="screenshots/mobile_skills.png" width="18%" alt="Skills" />
+  <img src="screenshots/mobile_contact.png" width="18%" alt="Contact" />
+  <img src="screenshots/mobile_projects.png" width="18%" alt="Projects" />
+</p>
 
