@@ -1297,3 +1297,12 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
     padding: 5px 5px !important;
   }
 }
+/* Long panels (skills, projects): pin the top edge below the menu, so extra
+   content grows the page downward instead of sliding up under the menu.
+   Persian (rtl) keeps its own rules. Mobile rules override with !important. */
+html:not([dir="rtl"]) main .MainContainer .Cols .ColRight.ColRight--skills,
+html:not([dir="rtl"]) main .MainContainer .Cols .ColRight.ColRight--projects {
+  top: -60px;
+  transform: translateX(50%);
+  padding-bottom: 40px;
+}
