@@ -1297,12 +1297,86 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
     padding: 5px 5px !important;
   }
 }
-/* Long panels (skills, projects): pin the top edge below the menu, so extra
-   content grows the page downward instead of sliding up under the menu.
-   Persian (rtl) keeps its own rules. Mobile rules override with !important. */
-html:not([dir="rtl"]) main .MainContainer .Cols .ColRight.ColRight--skills,
-html:not([dir="rtl"]) main .MainContainer .Cols .ColRight.ColRight--projects {
-  top: -60px;
-  transform: translateX(50%);
-  padding-bottom: 40px;
+/* Skills and projects on desktop: the page stays still, like About.
+   The glass box keeps a fixed size and only its inner .ScrollArea scrolls.
+   A slim scrollbar, a fade at the bottom and a "scroll" hint show there is
+   more. Persian (rtl) and the mobile layout keep their own rules. */
+.ScrollHint {
+  display: none;
+}
+@media screen and (min-width: 769px) {
+  html:not([dir="rtl"]) main .MainContainer .Cols .ColRight.ColRight--skills,
+  html:not([dir="rtl"]) main .MainContainer .Cols .ColRight.ColRight--projects {
+    top: -60px;
+    transform: translateX(50%);
+  }
+  html:not([dir="rtl"]) .ColRight--skills .ColText,
+  html:not([dir="rtl"]) .ColRight--projects .ColText {
+    display: flex;
+    flex-direction: column;
+    height: min(68vh, calc(100vh - 230px));
+    min-height: 320px;
+    box-sizing: border-box;
+  }
+  html:not([dir="rtl"]) .ColRight--skills .ColText {
+    margin-top: 0;
+  }
+  html:not([dir="rtl"]) .ColText .ScrollArea {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 14px;
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 70px), transparent);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 70px), transparent);
+  }
+  /* Styling the WebKit scrollbar keeps it visible on macOS (Chrome, Safari,
+     Edge); Firefox gets its own thin scrollbar below. */
+  @supports not selector(::-webkit-scrollbar) {
+    html:not([dir="rtl"]) .ColText .ScrollArea {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.45) rgba(255, 255, 255, 0.08);
+    }
+  }
+  html:not([dir="rtl"]) .ColText .ScrollArea::-webkit-scrollbar {
+    width: 6px;
+  }
+  html:not([dir="rtl"]) .ColText .ScrollArea::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+  }
+  html:not([dir="rtl"]) .ColText .ScrollArea::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 3px;
+  }
+  html:not([dir="rtl"]) .ColText.is-at-end .ScrollArea {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  html:not([dir="rtl"]) .ColText .ScrollHint {
+    display: none;
+  }
+  html:not([dir="rtl"]) .ColText.can-scroll .ScrollHint {
+    display: block;
+    align-self: center;
+    margin-top: 10px;
+    padding: 6px 16px;
+    font-family: "Merriweather Sans", sans-serif;
+    font-size: 13px;
+    color: #ededed;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    animation: ScrollHintBounce 1.6s ease-in-out infinite;
+  }
+  html:not([dir="rtl"]) .ColText.can-scroll.has-scrolled .ScrollHint {
+    opacity: 0;
+    animation: none;
+  }
+}
+@keyframes ScrollHintBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
 }
