@@ -1297,7 +1297,7 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
     padding: 5px 5px !important;
   }
 }
-/* Skills and projects on desktop: the page stays still, like About.
+/* Skills, projects and about on desktop: the page stays still.
    The glass box keeps a fixed size and only its inner .ScrollArea scrolls.
    A slim scrollbar, a fade at the bottom and a "scroll" hint show there is
    more. Persian (rtl) and the mobile layout keep their own rules. */
@@ -1306,7 +1306,8 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
 }
 @media screen and (min-width: 769px) {
   html:not([dir="rtl"]) main .MainContainer .Cols .ColRight.ColRight--skills,
-  html:not([dir="rtl"]) main .MainContainer .Cols .ColRight.ColRight--projects {
+  html:not([dir="rtl"]) main .MainContainer .Cols .ColRight.ColRight--projects,
+  html:not([dir="rtl"]) main .MainContainer .Cols .ColRight.ColRight--about {
     top: -60px;
     transform: translateX(50%);
   }
@@ -1320,6 +1321,13 @@ main .MainContainer .Cols .ColRight2 .ColText .SocialContainer a img {
   }
   html:not([dir="rtl"]) .ColRight--skills .ColText {
     margin-top: 0;
+  }
+  /* About grows with its text and only scrolls when the screen is too short. */
+  html:not([dir="rtl"]) .ColRight--about .ColText {
+    display: flex;
+    flex-direction: column;
+    max-height: min(80vh, calc(100vh - 200px));
+    box-sizing: border-box;
   }
   html:not([dir="rtl"]) .ColText .ScrollArea {
     flex: 1 1 auto;
